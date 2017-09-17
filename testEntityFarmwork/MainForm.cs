@@ -51,7 +51,7 @@ namespace testEntityFarmwork
         private void MainForm_Load(object sender, EventArgs e)
         {
             StartTimer();
-            var listPostPagination = LoadPostPagination(_realPage, NumberPostPerPage);
+            var listPostPagination = LoadPostPagination();
             var postOut = listPostPagination.Select(post => new SomeData
             {
                 Value = post.id,
@@ -60,7 +60,7 @@ namespace testEntityFarmwork
                 .ToList();
             ListboxPostNow.DisplayMember = "Text";
             ListboxPostNow.DataSource = postOut;
-            SettingPagination(_realPage, NumberPostPerPage);
+            SettingPagination();
         }
 
         private static int CountPost()
@@ -72,7 +72,7 @@ namespace testEntityFarmwork
             }
         }
 
-        private static IEnumerable<post> LoadPostPagination(int realPage, int numberPostPerPage)
+        private static IEnumerable<post> LoadPostPagination()
         {
             try
             {
@@ -82,8 +82,8 @@ namespace testEntityFarmwork
                         .Where(item => item.status == 1)
                         .Distinct()
                         .OrderByDescending(d => d.date_created)
-                        .Skip(realPage * numberPostPerPage)
-                        .Take(numberPostPerPage)
+                        .Skip(_realPage * NumberPostPerPage)
+                        .Take(NumberPostPerPage)
                         .ToList();
                     return postPaging;
                 }
@@ -95,8 +95,10 @@ namespace testEntityFarmwork
                     Console.WriteLine(@"Entity of type {0} in state {1} has the following validation errors:",
                         eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ve in eve.ValidationErrors)
+                    {
                         Console.WriteLine(@"- Property: {0}, Error: {1}",
                             ve.PropertyName, ve.ErrorMessage);
+                    }
                 }
                 throw;
             }
@@ -114,11 +116,13 @@ namespace testEntityFarmwork
             lbClock.Text = DateTime.Now.ToString("f");
         }
 
-        private void SettingPagination(int realPage, int numberPostPerPage)
+        private void SettingPagination()
         {
-            BtnPrevious.Enabled = realPage != 0;
-            BtnNext.Enabled = CountPost() >= numberPostPerPage;
-            lbCurrentPage.Text = realPage.ToString();
+            BtnPrevious.Enabled = _realPage != 0;
+            BtnNext.Enabled = CountPost() < NumberPostPerPage * _realPage ||
+                              CountPost() > NumberPostPerPage * (_realPage + 1);
+
+            lbCurrentPage.Text = _realPage.ToString();
         }
 
         private void BtnPrevious_Click(object sender, EventArgs e)
