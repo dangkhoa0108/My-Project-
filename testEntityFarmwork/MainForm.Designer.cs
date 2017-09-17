@@ -203,6 +203,7 @@
             this.ListboxPostNow.Name = "ListboxPostNow";
             this.ListboxPostNow.Size = new System.Drawing.Size(591, 292);
             this.ListboxPostNow.TabIndex = 0;
+            this.ListboxPostNow.DoubleClick += new System.EventHandler(this.ListboxPostNow_DoubleClick);
             // 
             // lbClock
             // 

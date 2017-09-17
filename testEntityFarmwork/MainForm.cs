@@ -155,5 +155,16 @@ namespace testEntityFarmwork
                 ListboxPostNow.DataSource = postOut;
             }
         }
+
+        private void ListboxPostNow_DoubleClick(object sender, EventArgs e)
+        {
+            int? value = ((SomeData) ListboxPostNow.SelectedItem).Value;
+            var postSelected = (int) value;
+            Visible = false;
+            var mainForm = new MainForm();
+            var postDetailForm = new PostDetailForm(postSelected);
+            mainForm.Hide();
+            postDetailForm.Show();
+        }
     }
 }

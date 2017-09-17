@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PostDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostDetailForm.Designer.cs">
+      <DependentUpon>PostDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostDetailForm.resx">
+      <DependentUpon>PostDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PostForm.resx">
       <DependentUpon>PostForm.cs</DependentUpon>
