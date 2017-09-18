@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
-    public partial class PostDetailForm : Form
+    public partial class PostDetailForm : MetroFramework.Forms.MetroForm
     {
         private readonly int _postSelect;
         public PostDetailForm()
@@ -97,10 +97,12 @@ namespace testEntityFarmwork
             }
         }
 
-        //test
-        private void PostDetailForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void PostDetailForm_FormClosed(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            var mainForm = new MainForm();
+            var postDetailForm = new PostDetailForm();
+            mainForm.Show();
+            postDetailForm.Close();
         }
     }
 }
