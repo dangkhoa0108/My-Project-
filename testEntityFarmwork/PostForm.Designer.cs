@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPost = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.posttitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postcontentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postauthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datecreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateupdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSavePost = new System.Windows.Forms.Button();
             this.btnDeletePost = new System.Windows.Forms.Button();
@@ -52,80 +43,24 @@
             this.tbContent = new System.Windows.Forms.TextBox();
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.btnAddPost = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPost
             // 
-            this.dgvPost.AutoGenerateColumns = false;
             this.dgvPost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPost.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.posttitleDataGridViewTextBoxColumn,
-            this.postcontentDataGridViewTextBoxColumn,
-            this.postauthorDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.datecreatedDataGridViewTextBoxColumn,
-            this.dateupdatedDataGridViewTextBoxColumn});
-            this.dgvPost.DataSource = this.postsBindingSource;
+            this.dgvPost.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPost.Location = new System.Drawing.Point(12, 269);
             this.dgvPost.Name = "dgvPost";
             this.dgvPost.Size = new System.Drawing.Size(746, 247);
             this.dgvPost.TabIndex = 0;
+            this.dgvPost.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPost_CellValueChanged);
             this.dgvPost.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPost_CellValueChanged);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // posttitleDataGridViewTextBoxColumn
-            // 
-            this.posttitleDataGridViewTextBoxColumn.DataPropertyName = "post_title";
-            this.posttitleDataGridViewTextBoxColumn.HeaderText = "post_title";
-            this.posttitleDataGridViewTextBoxColumn.Name = "posttitleDataGridViewTextBoxColumn";
-            // 
-            // postcontentDataGridViewTextBoxColumn
-            // 
-            this.postcontentDataGridViewTextBoxColumn.DataPropertyName = "post_content";
-            this.postcontentDataGridViewTextBoxColumn.HeaderText = "post_content";
-            this.postcontentDataGridViewTextBoxColumn.Name = "postcontentDataGridViewTextBoxColumn";
-            // 
-            // postauthorDataGridViewTextBoxColumn
-            // 
-            this.postauthorDataGridViewTextBoxColumn.DataPropertyName = "post_author";
-            this.postauthorDataGridViewTextBoxColumn.HeaderText = "post_author";
-            this.postauthorDataGridViewTextBoxColumn.Name = "postauthorDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // datecreatedDataGridViewTextBoxColumn
-            // 
-            this.datecreatedDataGridViewTextBoxColumn.DataPropertyName = "date_created";
-            this.datecreatedDataGridViewTextBoxColumn.HeaderText = "date_created";
-            this.datecreatedDataGridViewTextBoxColumn.Name = "datecreatedDataGridViewTextBoxColumn";
-            // 
-            // dateupdatedDataGridViewTextBoxColumn
-            // 
-            this.dateupdatedDataGridViewTextBoxColumn.DataPropertyName = "date_updated";
-            this.dateupdatedDataGridViewTextBoxColumn.HeaderText = "date_updated";
-            this.dateupdatedDataGridViewTextBoxColumn.Name = "dateupdatedDataGridViewTextBoxColumn";
-            //          
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            // usersTableAdapter
-            // 
             // 
             // panel1
             // 
@@ -192,9 +127,6 @@
             // cbbUser
             // 
             this.cbbUser.BackColor = System.Drawing.Color.Linen;
-            this.cbbUser.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.usersBindingSource, "id", true));
-            this.cbbUser.DataSource = this.usersBindingSource;
-            this.cbbUser.DisplayMember = "username";
             this.cbbUser.FormattingEnabled = true;
             this.cbbUser.Location = new System.Drawing.Point(74, 190);
             this.cbbUser.Name = "cbbUser";
@@ -271,6 +203,20 @@
             this.btnAddPost.UseVisualStyleBackColor = false;
             this.btnAddPost.Click += new System.EventHandler(this.BtnAddPost_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_1);
+            // 
             // PostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,18 +231,16 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PostForm_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvPost;
-        private System.Windows.Forms.BindingSource postsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posttitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postcontentDataGridViewTextBoxColumn;
@@ -304,7 +248,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datecreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateupdatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox cbPublish;
@@ -318,6 +261,8 @@
         private System.Windows.Forms.Button btnAddPost;
         private System.Windows.Forms.Button btnSavePost;
         private System.Windows.Forms.Button btnDeletePost;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 
