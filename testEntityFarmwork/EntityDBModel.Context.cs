@@ -20,6 +20,7 @@ namespace testEntityFarmwork
         public AppEntities()
             : base("name=AppEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

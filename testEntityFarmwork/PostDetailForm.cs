@@ -18,6 +18,11 @@ namespace testEntityFarmwork
             InitializeComponent();
         }
 
+        internal struct SomeData
+        {
+            public string Text { get; set; }
+        }
+
         public PostDetailForm(int postSelected)
         {
             _postSelect = postSelected;
@@ -26,15 +31,37 @@ namespace testEntityFarmwork
 
         private void PostDetail_Load(object sender, EventArgs e)
         {
+
             var post = GetPost(_postSelect);
             rtbPostDetail.Text = post.post_content;
+            var postDetailForm = new PostDetailForm();
+            postDetailForm.Text = post.post_title;
             var comments = GetCommentsByPost(_postSelect);
-            foreach (var comment in GetCommentsByPost(_postSelect))
+            var commentOut = new List<SomeData>();
+            foreach (var comment in comments)
             {
-                
+                var username = GetUsernameById(comment.author);
+                if (comment.time == null) continue;
+                var timeComment = (DateTime) comment.time;
+                if (timeComment != null && username != null && comment.content_text != null)
+                {
+                    var commentFormat = "[ " + username.ToString() + " | "+ timeComment.ToString("t")  + "] : " + comment.content_text;
+                    commentOut.Add(new SomeData()
+                    {
+                        Text = commentFormat
+                    });
+                }
             }
-            lbPostDetailComment.DisplayMember = "content_text";
-            lbPostDetailComment.DataSource = comments;
+            lbPostDetailComment.DisplayMember = "Text";
+            lbPostDetailComment.DataSource = commentOut;
+        }
+
+        private string GetUsernameById(int id)
+        {
+            using (var ctx = new AppEntities())
+            {
+                return ctx.users.Find(id)?.username.ToString();
+            }
         }
 
         private static post GetPost(int postId)
