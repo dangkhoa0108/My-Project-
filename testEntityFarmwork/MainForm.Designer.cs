@@ -67,7 +67,7 @@
             this.BtnShowProfileForm.Size = new System.Drawing.Size(98, 25);
             this.BtnShowProfileForm.TabIndex = 4;
             this.BtnShowProfileForm.Text = "Profile";
-            this.BtnShowProfileForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BtnShowProfileForm.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // lbAccount
             // 
@@ -88,7 +88,7 @@
             this.btnShowCommentForm.Size = new System.Drawing.Size(75, 23);
             this.btnShowCommentForm.TabIndex = 3;
             this.btnShowCommentForm.Text = "Comment";
-            this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // btnShowRoleForm
             // 
@@ -97,7 +97,7 @@
             this.btnShowRoleForm.Size = new System.Drawing.Size(75, 23);
             this.btnShowRoleForm.TabIndex = 3;
             this.btnShowRoleForm.Text = "Role";
-            this.btnShowRoleForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowRoleForm.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // lbCurrentPage
             // 
@@ -130,7 +130,7 @@
             this.btnSearch.Highlight = true;
             this.btnSearch.Location = new System.Drawing.Point(477, 16);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(135, 23);
+            this.btnSearch.Size = new System.Drawing.Size(99, 23);
             this.btnSearch.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
@@ -144,7 +144,7 @@
             this.btnShowPostForm.Size = new System.Drawing.Size(75, 23);
             this.btnShowPostForm.TabIndex = 3;
             this.btnShowPostForm.Text = "Post";
-            this.btnShowPostForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowPostForm.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnShowPostForm.Click += new System.EventHandler(this.BtnShowPostForm_Click);
             // 
             // btnShowUserForm
@@ -154,7 +154,7 @@
             this.btnShowUserForm.Size = new System.Drawing.Size(75, 23);
             this.btnShowUserForm.TabIndex = 3;
             this.btnShowUserForm.Text = "User";
-            this.btnShowUserForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowUserForm.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnShowUserForm.Click += new System.EventHandler(this.BtnShowUserForm_Click);
             // 
             // ListboxPostNow
@@ -168,7 +168,7 @@
             this.ListboxPostNow.Location = new System.Drawing.Point(21, 59);
             this.ListboxPostNow.Margin = new System.Windows.Forms.Padding(20);
             this.ListboxPostNow.Name = "ListboxPostNow";
-            this.ListboxPostNow.Size = new System.Drawing.Size(591, 292);
+            this.ListboxPostNow.Size = new System.Drawing.Size(555, 292);
             this.ListboxPostNow.TabIndex = 10;
             this.ListboxPostNow.DoubleClick += new System.EventHandler(this.ListboxPostNow_DoubleClick);
             // 
@@ -179,7 +179,7 @@
             this.BtnShowMyPostForm.Size = new System.Drawing.Size(98, 25);
             this.BtnShowMyPostForm.TabIndex = 4;
             this.BtnShowMyPostForm.Text = "My Post";
-            this.BtnShowMyPostForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BtnShowMyPostForm.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // metroPanel2
             // 
@@ -190,9 +190,9 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(4, 36);
+            this.metroPanel2.Location = new System.Drawing.Point(31, 52);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(129, 172);
+            this.metroPanel2.Size = new System.Drawing.Size(129, 100);
             this.metroPanel2.TabIndex = 14;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroPanel2.VerticalScrollbarBarColor = true;
@@ -210,9 +210,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(4, 216);
+            this.metroPanel1.Location = new System.Drawing.Point(31, 158);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(129, 169);
+            this.metroPanel1.Size = new System.Drawing.Size(129, 172);
             this.metroPanel1.TabIndex = 12;
             this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroPanel1.VerticalScrollbarBarColor = true;
@@ -241,9 +241,9 @@
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(139, 36);
+            this.metroPanel3.Location = new System.Drawing.Point(177, 36);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(633, 398);
+            this.metroPanel3.Size = new System.Drawing.Size(596, 398);
             this.metroPanel3.TabIndex = 15;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -254,7 +254,7 @@
             this.lbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbClock.AutoSize = true;
             this.lbClock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbClock.Location = new System.Drawing.Point(523, 10);
+            this.lbClock.Location = new System.Drawing.Point(524, 10);
             this.lbClock.Name = "lbClock";
             this.lbClock.Size = new System.Drawing.Size(0, 13);
             this.lbClock.TabIndex = 1;
@@ -265,7 +265,7 @@
             this.panel3.Controls.Add(this.lbClock);
             this.panel3.Location = new System.Drawing.Point(4, 442);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(768, 41);
+            this.panel3.Size = new System.Drawing.Size(769, 41);
             this.panel3.TabIndex = 11;
             // 
             // MainForm

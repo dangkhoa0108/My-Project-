@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
+    
+
     internal struct SomeData
     {
         public int Value { get; set; }
@@ -14,6 +16,7 @@ namespace testEntityFarmwork
 
     public partial class MainForm : MetroFramework.Forms.MetroForm
     {
+        static AppEntities ctx = new AppEntities();
         private const int NumberPostPerPage = 16;
         private static int _realPage;
         private Timer _t;
@@ -66,28 +69,22 @@ namespace testEntityFarmwork
 
         private static int CountPost()
         {
-            using (var ctx = new AppEntities())
-            {
                 return ctx.posts
                     .Count(o => o.status == 1);
-            }
         }
 
         private static IEnumerable<post> LoadPostPagination()
         {
             try
             {
-                using (var ctx = new AppEntities())
-                {
-                    var postPaging = ctx.posts
-                        .Where(item => item.status == 1)
-                        .Distinct()
-                        .OrderByDescending(d => d.date_created)
-                        .Skip(_realPage * NumberPostPerPage)
-                        .Take(NumberPostPerPage)
-                        .ToList();
-                    return postPaging;
-                }
+                var postPaging = ctx.posts
+                    .Where(item => item.status == 1)
+                    .Distinct()
+                    .OrderByDescending(d => d.date_created)
+                    .Skip(_realPage * NumberPostPerPage)
+                    .Take(NumberPostPerPage)
+                    .ToList();
+                return postPaging;
             }
             catch (DbEntityValidationException ex)
             {
@@ -133,21 +130,19 @@ namespace testEntityFarmwork
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            using (var ctx = new AppEntities())
-            {
-                var postPaging = ctx.posts
-                    .Where(item => item.status == 1 && item.post_title.Contains(tbSearch.Text))
-                    .OrderByDescending(d => d.date_created)
-                    .ToList();
-                var postOut = postPaging.Select(post => new SomeData
-                    {
-                        Value = post.id,
-                        Text = post.post_title
-                    })
-                    .ToList();
-                ListboxPostNow.DisplayMember = "Text";
-                ListboxPostNow.DataSource = postOut;
-            }
+            var postPaging = ctx.posts
+                .Where(item => item.status == 1 && item.post_title.Contains(tbSearch.Text))
+                .OrderByDescending(d => d.date_created)
+                .ToList();
+            var postOut = postPaging.Select(post => new SomeData
+                {
+                    Value = post.id,
+                    Text = post.post_title
+                })
+                .ToList();
+            ListboxPostNow.DisplayMember = "Text";
+            ListboxPostNow.DataSource = postOut;
+            
         }
 
         private void ListboxPostNow_DoubleClick(object sender, EventArgs e)

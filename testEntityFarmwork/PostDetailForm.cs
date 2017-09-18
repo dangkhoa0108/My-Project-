@@ -12,6 +12,7 @@ namespace testEntityFarmwork
 {
     public partial class PostDetailForm : MetroFramework.Forms.MetroForm
     {
+        static AppEntities ctx = new AppEntities();
         private readonly int _postSelect;
         public PostDetailForm()
         {
@@ -31,8 +32,8 @@ namespace testEntityFarmwork
 
         private void PostDetail_Load(object sender, EventArgs e)
         {
-
             var post = GetPost(_postSelect);
+            lbPostTitle.Text = post.post_title;
             rtbPostDetail.Text = post.post_content;
             var postDetailForm = new PostDetailForm {Text = post.post_title};
             var comments = GetCommentsByPost(_postSelect);
@@ -54,47 +55,38 @@ namespace testEntityFarmwork
 
         private static string GetUsernameById(int id)
         {
-            using (var ctx = new AppEntities())
-            {
-                return ctx.users.Find(id)?.username.ToString();
-            }
+
+            return ctx.users.Find(id)?.username.ToString();
         }
 
         private static post GetPost(int postId)
         {
-            using (var ctx = new AppEntities())
-            {
-                return ctx.posts.Find(postId);
-            }
+
+            return ctx.posts.Find(postId);
+            
         }
 
         private static IEnumerable<comment> GetCommentsByPost(int postId)
         {
-            using (var ctx = new AppEntities())
-            {
-                return ctx.comments
-                    .Where(item => item.post_id == postId)
-                    .OrderByDescending(o => o.time)
-                    .ToList();
-            }
+            return ctx.comments
+                .Where(item => item.post_id == postId)
+                .OrderByDescending(o => o.time)
+                .ToList();
         }
 
         private void BtnComment_Click(object sender, EventArgs e)
         {
-            using (var ctx = new AppEntities())
+            ctx.comments.Add(new comment()
             {
-                ctx.comments.Add(new comment()
-                {
-                    content_text = tbComment.Text,
-                    time = DateTime.Now,
-                    post_id = _postSelect,
-                    author = 1,
+                content_text = tbComment.Text,
+                time = DateTime.Now,
+                post_id = _postSelect,
+                author = 1,
                     
-                });
-                ctx.SaveChanges();
-                tbComment.Clear();
-                PostDetail_Load(sender, e);
-            }
+            });
+            ctx.SaveChanges();
+            tbComment.Clear();
+            PostDetail_Load(sender, e);
         }
 
         private void PostDetailForm_FormClosed(object sender, FormClosingEventArgs e)
@@ -103,6 +95,16 @@ namespace testEntityFarmwork
             var postDetailForm = new PostDetailForm();
             mainForm.Show();
             postDetailForm.Close();
+        }
+
+
+        private void tbComment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                BtnComment_Click(sender, e);
+            }
+            
         }
     }
 }
