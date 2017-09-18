@@ -12,7 +12,7 @@ namespace testEntityFarmwork
         public string Text { get; set; }
     }
 
-    public partial class MainForm : Form
+    public partial class MainForm : MetroFramework.Forms.MetroForm
     {
         private const int NumberPostPerPage = 16;
         private static int _realPage;
@@ -50,6 +50,7 @@ namespace testEntityFarmwork
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             StartTimer();
             var listPostPagination = LoadPostPagination();
             var postOut = listPostPagination.Select(post => new SomeData
@@ -127,14 +128,7 @@ namespace testEntityFarmwork
 
         private void BtnPrevious_Click(object sender, EventArgs e)
         {
-            _realPage--;
-            MainForm_Load(sender, e);
-        }
 
-        private void BtnNext_Click(object sender, EventArgs e)
-        {
-            _realPage++;
-            MainForm_Load(sender, e);
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -167,13 +161,9 @@ namespace testEntityFarmwork
             postDetailForm.Show();
         }
 
-        private void BtnComment_Click(object sender, EventArgs e)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            var mainForm = new MainForm();
-            var commentForm = new CommentForm();
-            mainForm.Hide();
-            commentForm.Show();
+
         }
     }
 }

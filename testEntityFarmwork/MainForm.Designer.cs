@@ -28,163 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnShowPostForm = new System.Windows.Forms.Button();
-            this.btnShowUserForm = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnRoleForm = new System.Windows.Forms.Button();
-            this.BtnComment = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbCurrentPage = new System.Windows.Forms.Label();
-            this.BtnNext = new System.Windows.Forms.Button();
-            this.BtnPrevious = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.tbSearch = new MetroFramework.Controls.MetroTextBox();
+            this.BtnShowProfileForm = new MetroFramework.Controls.MetroButton();
+            this.lbAccount = new MetroFramework.Controls.MetroTile();
+            this.btnShowCommentForm = new MetroFramework.Controls.MetroButton();
+            this.btnShowRoleForm = new MetroFramework.Controls.MetroButton();
+            this.lbCurrentPage = new MetroFramework.Controls.MetroLabel();
+            this.BtnNext = new MetroFramework.Controls.MetroButton();
+            this.BtnPrevious = new MetroFramework.Controls.MetroButton();
+            this.btnSearch = new MetroFramework.Controls.MetroButton();
+            this.btnShowPostForm = new MetroFramework.Controls.MetroButton();
+            this.btnShowUserForm = new MetroFramework.Controls.MetroButton();
             this.ListboxPostNow = new System.Windows.Forms.ListBox();
+            this.BtnShowMyPostForm = new MetroFramework.Controls.MetroButton();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.lbClock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnShowPostForm
+            // tbSearch
             // 
-            this.btnShowPostForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPostForm.Location = new System.Drawing.Point(18, 90);
-            this.btnShowPostForm.Name = "btnShowPostForm";
-            this.btnShowPostForm.Size = new System.Drawing.Size(92, 25);
-            this.btnShowPostForm.TabIndex = 0;
-            this.btnShowPostForm.Text = "Post";
-            this.btnShowPostForm.UseVisualStyleBackColor = true;
-            this.btnShowPostForm.Click += new System.EventHandler(this.BtnShowPostForm_Click);
+            this.tbSearch.Location = new System.Drawing.Point(21, 16);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(450, 23);
+            this.tbSearch.TabIndex = 16;
             // 
-            // btnShowUserForm
+            // BtnShowProfileForm
             // 
-            this.btnShowUserForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowUserForm.Location = new System.Drawing.Point(18, 59);
-            this.btnShowUserForm.Name = "btnShowUserForm";
-            this.btnShowUserForm.Size = new System.Drawing.Size(92, 25);
-            this.btnShowUserForm.TabIndex = 0;
-            this.btnShowUserForm.Text = "User";
-            this.btnShowUserForm.UseVisualStyleBackColor = true;
-            this.btnShowUserForm.Click += new System.EventHandler(this.BtnShowUserForm_Click);
+            this.BtnShowProfileForm.Location = new System.Drawing.Point(16, 32);
+            this.BtnShowProfileForm.Name = "BtnShowProfileForm";
+            this.BtnShowProfileForm.Size = new System.Drawing.Size(98, 25);
+            this.BtnShowProfileForm.TabIndex = 4;
+            this.BtnShowProfileForm.Text = "Profile";
+            this.BtnShowProfileForm.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // panel1
+            // lbAccount
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnShowPostForm);
-            this.panel1.Controls.Add(this.BtnRoleForm);
-            this.panel1.Controls.Add(this.BtnComment);
-            this.panel1.Controls.Add(this.btnShowUserForm);
-            this.panel1.Location = new System.Drawing.Point(5, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 197);
-            this.panel1.TabIndex = 1;
+            this.lbAccount.ForeColor = System.Drawing.Color.Black;
+            this.lbAccount.Location = new System.Drawing.Point(3, 3);
+            this.lbAccount.Name = "lbAccount";
+            this.lbAccount.Size = new System.Drawing.Size(123, 23);
+            this.lbAccount.TabIndex = 3;
+            this.lbAccount.Text = "Account";
+            this.lbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbAccount.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lbAccount.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             // 
-            // label1
+            // btnShowCommentForm
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Control Panel";
+            this.btnShowCommentForm.Location = new System.Drawing.Point(27, 131);
+            this.btnShowCommentForm.Name = "btnShowCommentForm";
+            this.btnShowCommentForm.Size = new System.Drawing.Size(75, 23);
+            this.btnShowCommentForm.TabIndex = 3;
+            this.btnShowCommentForm.Text = "Comment";
+            this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // BtnRoleForm
+            // btnShowRoleForm
             // 
-            this.BtnRoleForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRoleForm.Location = new System.Drawing.Point(18, 121);
-            this.BtnRoleForm.Name = "BtnRoleForm";
-            this.BtnRoleForm.Size = new System.Drawing.Size(92, 25);
-            this.BtnRoleForm.TabIndex = 0;
-            this.BtnRoleForm.Text = "Role";
-            this.BtnRoleForm.UseVisualStyleBackColor = true;
-            this.BtnRoleForm.Click += new System.EventHandler(this.BtnShowUserForm_Click);
-            // 
-            // BtnComment
-            // 
-            this.BtnComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnComment.Location = new System.Drawing.Point(18, 152);
-            this.BtnComment.Name = "BtnComment";
-            this.BtnComment.Size = new System.Drawing.Size(92, 25);
-            this.BtnComment.TabIndex = 0;
-            this.BtnComment.Text = "Comment";
-            this.BtnComment.UseVisualStyleBackColor = true;
-            this.BtnComment.Click += new System.EventHandler(this.BtnComment_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lbCurrentPage);
-            this.panel2.Controls.Add(this.BtnNext);
-            this.panel2.Controls.Add(this.BtnPrevious);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.tbSearch);
-            this.panel2.Controls.Add(this.ListboxPostNow);
-            this.panel2.Location = new System.Drawing.Point(140, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(633, 416);
-            this.panel2.TabIndex = 2;
+            this.btnShowRoleForm.Location = new System.Drawing.Point(27, 102);
+            this.btnShowRoleForm.Name = "btnShowRoleForm";
+            this.btnShowRoleForm.Size = new System.Drawing.Size(75, 23);
+            this.btnShowRoleForm.TabIndex = 3;
+            this.btnShowRoleForm.Text = "Role";
+            this.btnShowRoleForm.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lbCurrentPage
             // 
             this.lbCurrentPage.AutoSize = true;
-            this.lbCurrentPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentPage.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbCurrentPage.Location = new System.Drawing.Point(277, 362);
+            this.lbCurrentPage.Location = new System.Drawing.Point(285, 363);
             this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(0, 18);
-            this.lbCurrentPage.TabIndex = 5;
+            this.lbCurrentPage.Size = new System.Drawing.Size(0, 0);
+            this.lbCurrentPage.TabIndex = 15;
             // 
             // BtnNext
             // 
-            this.BtnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.BtnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnNext.Location = new System.Drawing.Point(303, 361);
+            this.BtnNext.Location = new System.Drawing.Point(328, 361);
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(75, 23);
-            this.BtnNext.TabIndex = 4;
+            this.BtnNext.TabIndex = 13;
             this.BtnNext.Text = "Next →";
-            this.BtnNext.UseVisualStyleBackColor = false;
             this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.BtnPrevious.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnPrevious.Location = new System.Drawing.Point(187, 361);
+            this.BtnPrevious.Location = new System.Drawing.Point(177, 361);
             this.BtnPrevious.Name = "BtnPrevious";
             this.BtnPrevious.Size = new System.Drawing.Size(75, 23);
-            this.BtnPrevious.TabIndex = 4;
+            this.BtnPrevious.TabIndex = 14;
             this.BtnPrevious.Text = "← Previous";
-            this.BtnPrevious.UseVisualStyleBackColor = false;
             this.BtnPrevious.Click += new System.EventHandler(this.BtnPrevious_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(461, 16);
+            this.btnSearch.Highlight = true;
+            this.btnSearch.Location = new System.Drawing.Point(477, 16);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(147, 30);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "SEARCH";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Size = new System.Drawing.Size(135, 23);
+            this.btnSearch.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // tbSearch
+            // btnShowPostForm
             // 
-            this.tbSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearch.Location = new System.Drawing.Point(17, 16);
-            this.tbSearch.MaximumSize = new System.Drawing.Size(435, 30);
-            this.tbSearch.MinimumSize = new System.Drawing.Size(4, 30);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(435, 29);
-            this.tbSearch.TabIndex = 2;
+            this.btnShowPostForm.Location = new System.Drawing.Point(27, 73);
+            this.btnShowPostForm.Name = "btnShowPostForm";
+            this.btnShowPostForm.Size = new System.Drawing.Size(75, 23);
+            this.btnShowPostForm.TabIndex = 3;
+            this.btnShowPostForm.Text = "Post";
+            this.btnShowPostForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowPostForm.Click += new System.EventHandler(this.BtnShowPostForm_Click);
+            // 
+            // btnShowUserForm
+            // 
+            this.btnShowUserForm.Location = new System.Drawing.Point(27, 44);
+            this.btnShowUserForm.Name = "btnShowUserForm";
+            this.btnShowUserForm.Size = new System.Drawing.Size(75, 23);
+            this.btnShowUserForm.TabIndex = 3;
+            this.btnShowUserForm.Text = "User";
+            this.btnShowUserForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowUserForm.Click += new System.EventHandler(this.BtnShowUserForm_Click);
             // 
             // ListboxPostNow
             // 
@@ -194,19 +165,96 @@
             this.ListboxPostNow.FormattingEnabled = true;
             this.ListboxPostNow.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ListboxPostNow.ItemHeight = 18;
-            this.ListboxPostNow.Location = new System.Drawing.Point(17, 59);
+            this.ListboxPostNow.Location = new System.Drawing.Point(21, 59);
             this.ListboxPostNow.Margin = new System.Windows.Forms.Padding(20);
             this.ListboxPostNow.Name = "ListboxPostNow";
             this.ListboxPostNow.Size = new System.Drawing.Size(591, 292);
-            this.ListboxPostNow.TabIndex = 0;
+            this.ListboxPostNow.TabIndex = 10;
             this.ListboxPostNow.DoubleClick += new System.EventHandler(this.ListboxPostNow_DoubleClick);
+            // 
+            // BtnShowMyPostForm
+            // 
+            this.BtnShowMyPostForm.Location = new System.Drawing.Point(16, 63);
+            this.BtnShowMyPostForm.Name = "BtnShowMyPostForm";
+            this.BtnShowMyPostForm.Size = new System.Drawing.Size(98, 25);
+            this.BtnShowMyPostForm.TabIndex = 4;
+            this.BtnShowMyPostForm.Text = "My Post";
+            this.BtnShowMyPostForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.metroPanel2.Controls.Add(this.BtnShowMyPostForm);
+            this.metroPanel2.Controls.Add(this.BtnShowProfileForm);
+            this.metroPanel2.Controls.Add(this.lbAccount);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(4, 36);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(129, 172);
+            this.metroPanel2.TabIndex = 14;
+            this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.btnShowCommentForm);
+            this.metroPanel1.Controls.Add(this.btnShowRoleForm);
+            this.metroPanel1.Controls.Add(this.btnShowPostForm);
+            this.metroPanel1.Controls.Add(this.btnShowUserForm);
+            this.metroPanel1.Controls.Add(this.metroTile1);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(4, 216);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(129, 169);
+            this.metroPanel1.TabIndex = 12;
+            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ForeColor = System.Drawing.Color.Black;
+            this.metroTile1.Location = new System.Drawing.Point(3, 3);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(123, 23);
+            this.metroTile1.TabIndex = 2;
+            this.metroTile1.Text = "Control Panel";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Controls.Add(this.tbSearch);
+            this.metroPanel3.Controls.Add(this.lbCurrentPage);
+            this.metroPanel3.Controls.Add(this.BtnNext);
+            this.metroPanel3.Controls.Add(this.BtnPrevious);
+            this.metroPanel3.Controls.Add(this.btnSearch);
+            this.metroPanel3.Controls.Add(this.ListboxPostNow);
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(139, 36);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(633, 398);
+            this.metroPanel3.TabIndex = 15;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
             // lbClock
             // 
             this.lbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbClock.AutoSize = true;
             this.lbClock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbClock.Location = new System.Drawing.Point(537, 10);
+            this.lbClock.Location = new System.Drawing.Point(523, 10);
             this.lbClock.Name = "lbClock";
             this.lbClock.Size = new System.Drawing.Size(0, 13);
             this.lbClock.TabIndex = 1;
@@ -215,32 +263,34 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
             this.panel3.Controls.Add(this.lbClock);
-            this.panel3.Location = new System.Drawing.Point(8, 425);
+            this.panel3.Location = new System.Drawing.Point(4, 442);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(782, 32);
-            this.panel3.TabIndex = 6;
+            this.panel3.Size = new System.Drawing.Size(768, 41);
+            this.panel3.TabIndex = 11;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(235)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(776, 460);
+            this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(776, 488);
+            this.Controls.Add(this.metroPanel2);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Controls.Add(this.metroPanel3);
+            this.DisplayHeader = false;
             this.Location = new System.Drawing.Point(800, 200);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(500, 0, 0, 0);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(500, 30, 0, 0);
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
+            this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel3.ResumeLayout(false);
+            this.metroPanel3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -248,21 +298,24 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnShowPostForm;
-        private System.Windows.Forms.Button btnShowUserForm;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button BtnRoleForm;
-        private System.Windows.Forms.Button BtnComment;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private MetroFramework.Controls.MetroTextBox tbSearch;
+        private MetroFramework.Controls.MetroButton BtnShowProfileForm;
+        private MetroFramework.Controls.MetroTile lbAccount;
+        private MetroFramework.Controls.MetroButton btnShowCommentForm;
+        private MetroFramework.Controls.MetroButton btnShowRoleForm;
+        private MetroFramework.Controls.MetroLabel lbCurrentPage;
+        private MetroFramework.Controls.MetroButton BtnNext;
+        private MetroFramework.Controls.MetroButton BtnPrevious;
+        private MetroFramework.Controls.MetroButton btnSearch;
+        private MetroFramework.Controls.MetroButton btnShowPostForm;
+        private MetroFramework.Controls.MetroButton btnShowUserForm;
         private System.Windows.Forms.ListBox ListboxPostNow;
+        private MetroFramework.Controls.MetroButton BtnShowMyPostForm;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroPanel metroPanel3;
         private System.Windows.Forms.Label lbClock;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.Label lbCurrentPage;
-        private System.Windows.Forms.Button BtnNext;
-        private System.Windows.Forms.Button BtnPrevious;
         private System.Windows.Forms.Panel panel3;
     }
 }
