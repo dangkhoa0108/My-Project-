@@ -18,7 +18,7 @@ namespace testEntityFarmwork
     {
         static AppEntities ctx = new AppEntities();
         private const int NumberPostPerPage = 16;
-        private static int _realPage;
+        public static int RealPage;
         private Timer _t;
 
         public MainForm()
@@ -81,7 +81,7 @@ namespace testEntityFarmwork
                     .Where(item => item.status == 1)
                     .Distinct()
                     .OrderByDescending(d => d.date_created)
-                    .Skip(_realPage * NumberPostPerPage)
+                    .Skip(RealPage * NumberPostPerPage)
                     .Take(NumberPostPerPage)
                     .ToList();
                 return postPaging;
@@ -116,11 +116,11 @@ namespace testEntityFarmwork
 
         private void SettingPagination()
         {
-            BtnPrevious.Enabled = _realPage != 0;
-            BtnNext.Enabled = CountPost() < NumberPostPerPage * _realPage ||
-                              CountPost() > NumberPostPerPage * (_realPage + 1);
+            BtnPrevious.Enabled = RealPage != 0;
+            BtnNext.Enabled = CountPost() < NumberPostPerPage * RealPage ||
+                              CountPost() > NumberPostPerPage * (RealPage + 1);
 
-            lbCurrentPage.Text = _realPage.ToString();
+            lbCurrentPage.Text = RealPage.ToString();
         }
 
         private void BtnPrevious_Click(object sender, EventArgs e)

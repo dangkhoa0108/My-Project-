@@ -55,15 +55,12 @@ namespace testEntityFarmwork
 
         private static string GetUsernameById(int id)
         {
-
             return ctx.users.Find(id)?.username.ToString();
         }
 
         private static post GetPost(int postId)
         {
-
             return ctx.posts.Find(postId);
-            
         }
 
         private static IEnumerable<comment> GetCommentsByPost(int postId)
@@ -96,7 +93,6 @@ namespace testEntityFarmwork
             mainForm.Show();
             postDetailForm.Close();
         }
-
 
         private void tbComment_KeyPress(object sender, KeyPressEventArgs e)
         {
