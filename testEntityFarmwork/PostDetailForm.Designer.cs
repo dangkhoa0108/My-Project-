@@ -30,12 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbPostDetailComment = new System.Windows.Forms.ListBox();
-            this.commentDataSet = new testEntityFarmwork.CommentDataSet();
             this.commentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rtbPostDetail = new System.Windows.Forms.RichTextBox();
             this.tbComment = new MetroFramework.Controls.MetroTextBox();
             this.BtnComment = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,14 +46,8 @@
             this.lbPostDetailComment.Size = new System.Drawing.Size(262, 238);
             this.lbPostDetailComment.TabIndex = 1;
             // 
-            // commentDataSet
-            // 
-            this.commentDataSet.DataSetName = "AppDataSet";
-            this.commentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // commentDataSetBindingSource
             // 
-            this.commentDataSetBindingSource.DataSource = this.commentDataSet;
             this.commentDataSetBindingSource.Position = 0;
             // 
             // rtbPostDetail
@@ -107,7 +99,6 @@
             this.Text = "PostDetail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PostDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.PostDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -115,7 +106,6 @@
 
         #endregion
         private System.Windows.Forms.ListBox lbPostDetailComment;
-        private CommentDataSet commentDataSet;
         private System.Windows.Forms.BindingSource commentDataSetBindingSource;
         private System.Windows.Forms.RichTextBox rtbPostDetail;
         private MetroFramework.Controls.MetroTextBox tbComment;
