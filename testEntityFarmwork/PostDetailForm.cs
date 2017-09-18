@@ -74,6 +74,7 @@ namespace testEntityFarmwork
             }
         }
 
+        //test
         private void PostDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

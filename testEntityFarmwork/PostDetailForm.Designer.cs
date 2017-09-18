@@ -58,6 +58,7 @@
             this.lbPostDetailComment.FormattingEnabled = true;
             this.lbPostDetailComment.Location = new System.Drawing.Point(404, 12);
             this.lbPostDetailComment.Name = "lbPostDetailComment";
+            this.lbPostDetailComment.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lbPostDetailComment.Size = new System.Drawing.Size(262, 238);
             this.lbPostDetailComment.TabIndex = 1;
             // 
