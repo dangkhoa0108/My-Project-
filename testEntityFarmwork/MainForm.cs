@@ -166,5 +166,14 @@ namespace testEntityFarmwork
             mainForm.Hide();
             postDetailForm.Show();
         }
+
+        private void BtnComment_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            var mainForm = new MainForm();
+            var commentForm = new CommentForm();
+            mainForm.Hide();
+            commentForm.Show();
+        }
     }
 }

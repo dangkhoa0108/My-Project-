@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.rtbPostDetail = new System.Windows.Forms.RichTextBox();
             this.lbPostDetailComment = new System.Windows.Forms.ListBox();
-            this.commentDataSet = new testEntityFarmwork.CommentDataSet();
-            this.commentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbComment = new System.Windows.Forms.TextBox();
             this.BtnComment = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbPostDetail
@@ -61,16 +56,6 @@
             this.lbPostDetailComment.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lbPostDetailComment.Size = new System.Drawing.Size(262, 238);
             this.lbPostDetailComment.TabIndex = 1;
-            // 
-            // commentDataSet
-            // 
-            this.commentDataSet.DataSetName = "AppDataSet";
-            this.commentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commentDataSetBindingSource
-            // 
-            this.commentDataSetBindingSource.DataSource = this.commentDataSet;
-            this.commentDataSetBindingSource.Position = 0;
             // 
             // tbComment
             // 
@@ -104,8 +89,6 @@
             this.Text = "PostDetail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PostDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.PostDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,8 +98,6 @@
 
         private System.Windows.Forms.RichTextBox rtbPostDetail;
         private System.Windows.Forms.ListBox lbPostDetailComment;
-        private CommentDataSet commentDataSet;
-        private System.Windows.Forms.BindingSource commentDataSetBindingSource;
         private System.Windows.Forms.TextBox tbComment;
         private System.Windows.Forms.Button BtnComment;
     }

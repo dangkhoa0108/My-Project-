@@ -114,7 +114,7 @@
             this.BtnComment.TabIndex = 0;
             this.BtnComment.Text = "Comment";
             this.BtnComment.UseVisualStyleBackColor = true;
-            this.BtnComment.Click += new System.EventHandler(this.BtnShowUserForm_Click);
+            this.BtnComment.Click += new System.EventHandler(this.BtnComment_Click);
             // 
             // panel2
             // 

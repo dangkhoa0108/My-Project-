@@ -38,12 +38,7 @@
             this.datecreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateupdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appDataSet2 = new testEntityFarmwork.AppDataSet2();
-            this.postsTableAdapter = new testEntityFarmwork.AppDataSet2TableAdapters.postsTableAdapter();
-            this.commentTableAdapter1 = new testEntityFarmwork.AppDataSetTableAdapters.commentTableAdapter();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PostDataset = new testEntityFarmwork.AppDataSet3();
-            this.usersTableAdapter = new testEntityFarmwork.AppDataSet3TableAdapters.usersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSavePost = new System.Windows.Forms.Button();
             this.btnDeletePost = new System.Windows.Forms.Button();
@@ -59,9 +54,7 @@
             this.btnAddPost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PostDataset)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -127,38 +120,12 @@
             this.dateupdatedDataGridViewTextBoxColumn.DataPropertyName = "date_updated";
             this.dateupdatedDataGridViewTextBoxColumn.HeaderText = "date_updated";
             this.dateupdatedDataGridViewTextBoxColumn.Name = "dateupdatedDataGridViewTextBoxColumn";
-            // 
-            // postsBindingSource
-            // 
-            this.postsBindingSource.DataMember = "posts";
-            this.postsBindingSource.DataSource = this.appDataSet2;
-            // 
-            // appDataSet2
-            // 
-            this.appDataSet2.DataSetName = "AppDataSet2";
-            this.appDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // postsTableAdapter
-            // 
-            this.postsTableAdapter.ClearBeforeFill = true;
-            // 
-            // commentTableAdapter1
-            // 
-            this.commentTableAdapter1.ClearBeforeFill = true;
-            // 
+            //          
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.PostDataset;
-            // 
-            // PostDataset
-            // 
-            this.PostDataset.DataSetName = "PostDataset";
-            this.PostDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usersTableAdapter
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -319,9 +286,7 @@
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PostDataset)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -331,9 +296,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvPost;
-        private AppDataSet2 appDataSet2;
         private System.Windows.Forms.BindingSource postsBindingSource;
-        private AppDataSet2TableAdapters.postsTableAdapter postsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn posttitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postcontentDataGridViewTextBoxColumn;
@@ -341,10 +304,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datecreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateupdatedDataGridViewTextBoxColumn;
-        private AppDataSetTableAdapters.commentTableAdapter commentTableAdapter1;
-        private AppDataSet3 PostDataset;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private AppDataSet3TableAdapters.usersTableAdapter usersTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox cbPublish;

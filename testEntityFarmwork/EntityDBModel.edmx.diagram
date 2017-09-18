@@ -6,16 +6,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d3a2b6c4130a4abb8442a48d7384482d" Name="Diagram1">
-        <EntityTypeShape EntityType="AppModel.category" Width="1.5" PointX="3.75" PointY="7.75" />
-        <EntityTypeShape EntityType="AppModel.comment" Width="1.5" PointX="8.25" PointY="4.625" />
-        <EntityTypeShape EntityType="AppModel.like_post" Width="1.5" PointX="3" PointY="1.625" />
-        <EntityTypeShape EntityType="AppModel.post" Width="1.5" PointX="6" PointY="4" />
-        <EntityTypeShape EntityType="AppModel.role" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="AppModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="AppModel.user_role" Width="1.5" PointX="3" PointY="4.625" />
-        <EntityTypeShape EntityType="AppModel.user" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="AppModel.category" Width="1.5" PointX="4.375" PointY="9.25" />
+        <EntityTypeShape EntityType="AppModel.comment" Width="1.5" PointX="8.625" PointY="7.75" />
+        <EntityTypeShape EntityType="AppModel.like_post" Width="1.5" PointX="3.625" PointY="6.125" />
+        <EntityTypeShape EntityType="AppModel.post" Width="1.5" PointX="6.625" PointY="5.5" />
+        <EntityTypeShape EntityType="AppModel.role" Width="1.5" PointX="1.375" PointY="3.375" />
+        <EntityTypeShape EntityType="AppModel.sysdiagram" Width="1.5" PointX="6.375" PointY="0.5" />
+        <EntityTypeShape EntityType="AppModel.user_role" Width="1.5" PointX="3.625" PointY="3.125" />
+        <EntityTypeShape EntityType="AppModel.user" Width="1.5" PointX="1.375" PointY="5.875" />
         <AssociationConnector Association="AppModel.FK_posts_category1" />
         <AssociationConnector Association="AppModel.FK_comment_posts" />
+        <AssociationConnector Association="AppModel.FK_comment_users" />
         <AssociationConnector Association="AppModel.FK_like_post_posts" />
         <AssociationConnector Association="AppModel.FK_like_post_users" />
         <AssociationConnector Association="AppModel.FK_posts_users" />

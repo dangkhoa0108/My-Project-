@@ -14,9 +14,8 @@ namespace testEntityFarmwork
         private void Main_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'appDataSet3.users' table. You can move, or remove it, as needed.
-            usersTableAdapter.Fill(PostDataset.users);
+            //usersTableAdapter.Fill(PostDataset.users);
             // TODO: This line of code loads data into the 'appDataSet2.posts' table. You can move, or remove it, as needed.
-            postsTableAdapter.Fill(appDataSet2.posts);
         }
 
         private void BtnAddPost_Click(object sender, EventArgs e)
@@ -43,7 +42,6 @@ namespace testEntityFarmwork
                     tbTitle.Clear();
                     tbContent.Clear();
                     cbPublish.Checked = false;
-                    postsTableAdapter.Fill(appDataSet2.posts);
                 }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
@@ -67,7 +65,6 @@ namespace testEntityFarmwork
             foreach (DataGridViewCell oneCell in dgvPost.SelectedCells)
                 if (oneCell.Selected)
                     dgvPost.Rows.RemoveAt(oneCell.RowIndex);
-            postsTableAdapter.Update(appDataSet2.posts);
         }
 
         private void DgvPost_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -77,7 +74,6 @@ namespace testEntityFarmwork
 
         private void BtnSavePost_Click(object sender, EventArgs e)
         {
-            postsTableAdapter.Update(appDataSet2.posts);
         }
 
         private void PostForm_FormClosed(object sender, FormClosedEventArgs e)

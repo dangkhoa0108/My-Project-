@@ -17,6 +17,7 @@ namespace testEntityFarmwork
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public user()
         {
+            this.comments = new HashSet<comment>();
             this.like_post = new HashSet<like_post>();
             this.posts = new HashSet<post>();
             this.user_role = new HashSet<user_role>();
@@ -27,6 +28,8 @@ namespace testEntityFarmwork
         public string password { get; set; }
         public string email { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<comment> comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<like_post> like_post { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

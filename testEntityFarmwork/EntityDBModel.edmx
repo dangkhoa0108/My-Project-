@@ -93,6 +93,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_comment_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_like_post_posts">
           <End Role="posts" Type="Self.posts" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -222,6 +234,10 @@
             <End Role="posts" EntitySet="posts" />
             <End Role="comment" EntitySet="comment" />
           </AssociationSet>
+          <AssociationSet Name="FK_comment_users" Association="Self.FK_comment_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
           <AssociationSet Name="FK_like_post_posts" Association="Self.FK_like_post_posts">
             <End Role="posts" EntitySet="posts" />
             <End Role="like_post" EntitySet="like_post" />
@@ -311,6 +327,10 @@
             <End Role="post" EntitySet="posts" />
             <End Role="comment" EntitySet="comments" />
           </AssociationSet>
+          <AssociationSet Name="FK_comment_users" Association="AppModel.FK_comment_users">
+            <End Role="user" EntitySet="users" />
+            <End Role="comment" EntitySet="comments" />
+          </AssociationSet>
           <AssociationSet Name="FK_like_post_posts" Association="AppModel.FK_like_post_posts">
             <End Role="post" EntitySet="posts" />
             <End Role="like_post" EntitySet="like_post" />
@@ -380,6 +400,7 @@
           <Property Name="author" Type="Int32" Nullable="false" />
           <Property Name="post_id" Type="Int32" />
           <NavigationProperty Name="post" Relationship="AppModel.FK_comment_posts" FromRole="comment" ToRole="post" />
+          <NavigationProperty Name="user" Relationship="AppModel.FK_comment_users" FromRole="comment" ToRole="user" />
         </EntityType>
         <EntityType Name="like_post">
           <Key>
@@ -444,6 +465,7 @@
           <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="comments" Relationship="AppModel.FK_comment_users" FromRole="user" ToRole="comment" />
           <NavigationProperty Name="like_post" Relationship="AppModel.FK_like_post_users" FromRole="user" ToRole="like_post" />
           <NavigationProperty Name="posts" Relationship="AppModel.FK_posts_users" FromRole="user" ToRole="post" />
           <NavigationProperty Name="user_role" Relationship="AppModel.FK_user_role_users" FromRole="user" ToRole="user_role" />
@@ -471,6 +493,18 @@
             </Principal>
             <Dependent Role="comment">
               <PropertyRef Name="post_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_users">
+          <End Type="AppModel.user" Role="user" Multiplicity="1" />
+          <End Type="AppModel.comment" Role="comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="author" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace testEntityFarmwork
 {
     public partial class UserForm : Form
     {
+        AppEntities db = new AppEntities();
+
         public UserForm()
         {
             InitializeComponent();
+            LoadData();
+            DataBinding();
         }
 
         private void UserForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -18,43 +23,93 @@ namespace testEntityFarmwork
             mainForm.Show();
         }
 
-        private void UserForm_Load(object sender, EventArgs e)
+        #region methods
+        void LoadData()
         {
-            // TODO: This line of code loads data into the 'userDataSet.users' table. You can move, or remove it, as needed.
-            usersTableAdapter.Fill(userDataSet.users);
+            var listUser = from us in db.users select new { id = us.id, username = us.username, password = us.password, email = us.email };
+            dgvUser.DataSource = listUser.ToList();
         }
+        void DataBinding()
+        {
+            tbUsername.DataBindings.Clear();
+            tbPassword.DataBindings.Clear();
+            tbEmail.DataBindings.Clear();
+            tbUsername.DataBindings.Add(new Binding("Text", dgvUser.DataSource, "username"));
+            tbPassword.DataBindings.Add(new Binding("Text", dgvUser.DataSource, "password"));
+            tbEmail.DataBindings.Add(new Binding("Text", dgvUser.DataSource, "email"));
+        }
+        void AddUser()
+        {
+            try
+            {
+                user user = new user { username = tbUsername.Text, password = tbPassword.Text, email = tbEmail.Text };
+                db.users.Add(user);
+                db.SaveChanges();
+                MessageBox.Show("Add success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+                DataBinding();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+
+        }
+        void EditUser()
+        {
+            try
+            {
+                int id = int.Parse(dgvUser.SelectedCells[0].OwningRow.Cells["id"].Value.ToString());
+                user edit = db.users.Find(id);
+                edit.username = tbUsername.Text;
+                edit.password = tbPassword.Text;
+                edit.email = tbEmail.Text;
+                db.SaveChanges();
+                MessageBox.Show("Edit success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+                DataBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+        void DeleteUser()
+        {
+            try
+            {
+                int id = int.Parse(dgvUser.SelectedCells[0].OwningRow.Cells["id"].Value.ToString());
+                user del = db.users.Where(u => u.id == id).SingleOrDefault();
+                db.users.Remove(del);
+                db.SaveChanges();
+                MessageBox.Show("Delete success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+                DataBinding();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+        #endregion
 
         private void BtnAddUser_Click(object sender, EventArgs e)
         {
-            var newUser = new user
-            {
-                username = tbUsername.Text,
-                password = tbPassword.Text
-            };
-            using (var ctx = new AppEntities())
-            {
-                ctx.users.Add(newUser);
-                ctx.SaveChanges();
-                usersTableAdapter.Fill(userDataSet.users);
-            }
+            AddUser();
         }
 
         private void BtnDeleteUser_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewCell oneCell in dgvUser.SelectedCells)
-                if (oneCell.Selected)
-                    dgvUser.Rows.RemoveAt(oneCell.RowIndex);
-            usersTableAdapter.Update(userDataSet.users);
+            DeleteUser();
         }
 
-        private void BtnSaveChangeUser_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            usersTableAdapter.Update(userDataSet.users);
-        }
-
-        private void DgvUser_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            BtnSaveChangeUser.Enabled = true;
+            EditUser();
         }
     }
 }

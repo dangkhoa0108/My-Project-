@@ -57,28 +57,14 @@
     <Compile Include="category.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CommentDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommentDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AppDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AppDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AppDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="comment.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityDBModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -103,11 +89,6 @@
     </Compile>
     <Compile Include="PostDetailForm.Designer.cs">
       <DependentUpon>PostDetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
@@ -156,6 +137,9 @@
     <Compile Include="user_role.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,50 +165,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CommentDataSet.xsc">
-      <DependentUpon>CommentDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CommentDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CommentDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CommentDataSet.xss">
-      <DependentUpon>CommentDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet1.xsc">
-      <DependentUpon>AppDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AppDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AppDataSet1.xss">
-      <DependentUpon>AppDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet2.xsc">
-      <DependentUpon>AppDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AppDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AppDataSet2.xss">
-      <DependentUpon>AppDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet3.xsc">
-      <DependentUpon>AppDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="AppDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AppDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AppDataSet3.xss">
-      <DependentUpon>AppDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="EntityDBModel.edmx.diagram">
       <DependentUpon>EntityDBModel.edmx</DependentUpon>
     </None>
@@ -238,17 +178,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UserDataSet.xsc">
-      <DependentUpon>UserDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UserDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UserDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UserDataSet.xss">
-      <DependentUpon>UserDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
