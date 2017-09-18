@@ -35,6 +35,7 @@ namespace testEntityFarmwork
             {
                 var mainForm = new MainForm();
                 this.Hide();
+                LoginInfo.email = inEmail; 
                 mainForm.Show();
             }
             else

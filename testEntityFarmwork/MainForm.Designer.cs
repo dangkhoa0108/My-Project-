@@ -68,6 +68,7 @@
             this.BtnShowProfileForm.TabIndex = 4;
             this.BtnShowProfileForm.Text = "Profile";
             this.BtnShowProfileForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnShowProfileForm.Click += new System.EventHandler(this.BtnShowProfileForm_Click);
             // 
             // lbAccount
             // 

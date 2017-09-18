@@ -160,5 +160,14 @@ namespace testEntityFarmwork
         {
 
         }
+
+        private void BtnShowProfileForm_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            var mainForm = new MainForm();
+            var profileForm = new ProfileForm();
+            mainForm.Hide();
+            profileForm.Show();
+        }
     }
 }
