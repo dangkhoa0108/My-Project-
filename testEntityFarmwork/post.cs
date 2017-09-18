@@ -18,18 +18,23 @@ namespace testEntityFarmwork
         public post()
         {
             this.comments = new HashSet<comment>();
+            this.like_post = new HashSet<like_post>();
         }
     
         public int id { get; set; }
         public string post_title { get; set; }
         public string post_content { get; set; }
         public Nullable<int> post_author { get; set; }
+        public Nullable<int> category { get; set; }
         public Nullable<int> status { get; set; }
         public Nullable<System.DateTime> date_created { get; set; }
         public Nullable<System.DateTime> date_updated { get; set; }
     
+        public virtual category category1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comment> comments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<like_post> like_post { get; set; }
         public virtual user user { get; set; }
     }
 }

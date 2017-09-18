@@ -20,7 +20,6 @@ namespace testEntityFarmwork
         public AppEntities()
             : base("name=AppEntities")
         {
-            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -28,15 +27,14 @@ namespace testEntityFarmwork
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<category> categories { get; set; }
         public virtual DbSet<comment> comments { get; set; }
+        public virtual DbSet<like_post> like_post { get; set; }
         public virtual DbSet<post> posts { get; set; }
         public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user_role> user_role { get; set; }
         public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<V_POST> V_POST { get; set; }
-        public virtual DbSet<V_ROLE> V_ROLE { get; set; }
-        public virtual DbSet<V_USER> V_USER { get; set; }
     
         public virtual int CheckPostActive(Nullable<int> post_id)
         {

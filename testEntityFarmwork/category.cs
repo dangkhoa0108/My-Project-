@@ -12,26 +12,19 @@ namespace testEntityFarmwork
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
+        public category()
         {
-            this.like_post = new HashSet<like_post>();
             this.posts = new HashSet<post>();
-            this.user_role = new HashSet<user_role>();
         }
     
-        public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
+        public int category_id { get; set; }
+        public string name { get; set; }
+        public string display_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<like_post> like_post { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<post> posts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user_role> user_role { get; set; }
     }
 }

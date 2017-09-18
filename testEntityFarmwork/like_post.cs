@@ -12,10 +12,13 @@ namespace testEntityFarmwork
     using System;
     using System.Collections.Generic;
     
-    public partial class V_ROLE
+    public partial class like_post
     {
-        public int role_id { get; set; }
-        public int user_role_id { get; set; }
-        public string role_name { get; set; }
+        public int id { get; set; }
+        public Nullable<int> user_id { get; set; }
+        public Nullable<int> post_id { get; set; }
+    
+        public virtual post post { get; set; }
+        public virtual user user { get; set; }
     }
 }

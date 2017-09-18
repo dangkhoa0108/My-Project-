@@ -34,29 +34,25 @@ namespace testEntityFarmwork
 
             var post = GetPost(_postSelect);
             rtbPostDetail.Text = post.post_content;
-            var postDetailForm = new PostDetailForm();
-            postDetailForm.Text = post.post_title;
+            var postDetailForm = new PostDetailForm {Text = post.post_title};
             var comments = GetCommentsByPost(_postSelect);
-            var commentOut = new List<SomeData>();
-            foreach (var comment in comments)
-            {
-                var username = GetUsernameById(comment.author);
-                if (comment.time == null) continue;
-                var timeComment = (DateTime) comment.time;
-                if (timeComment != null && username != null && comment.content_text != null)
+            var commentOut = (from comment in comments
+                let username = GetUsernameById(comment.author)
+                let dateTime = comment.time
+                where dateTime != null
+                let timeComment = (DateTime) dateTime
+                where username != null && comment.content_text != null
+                select "[ " + username.ToString() + " | " + timeComment.ToString("t") + "] : " + comment.content_text
+                into commentFormat
+                select new SomeData()
                 {
-                    var commentFormat = "[ " + username.ToString() + " | "+ timeComment.ToString("t")  + "] : " + comment.content_text;
-                    commentOut.Add(new SomeData()
-                    {
-                        Text = commentFormat
-                    });
-                }
-            }
+                    Text = commentFormat
+                }).ToList();
             lbPostDetailComment.DisplayMember = "Text";
             lbPostDetailComment.DataSource = commentOut;
         }
 
-        private string GetUsernameById(int id)
+        private static string GetUsernameById(int id)
         {
             using (var ctx = new AppEntities())
             {
@@ -72,7 +68,7 @@ namespace testEntityFarmwork
             }
         }
 
-        private static List<comment> GetCommentsByPost(int postId)
+        private static IEnumerable<comment> GetCommentsByPost(int postId)
         {
             using (var ctx = new AppEntities())
             {

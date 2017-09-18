@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="category.cs">
+      <DependentUpon>EntityDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CommentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="like_post.cs">
+      <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PostDetailForm.cs">
       <SubType>Form</SubType>
@@ -148,15 +154,6 @@
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="user_role.cs">
-      <DependentUpon>EntityDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="V_POST.cs">
-      <DependentUpon>EntityDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="V_ROLE.cs">
-      <DependentUpon>EntityDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="V_USER.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">

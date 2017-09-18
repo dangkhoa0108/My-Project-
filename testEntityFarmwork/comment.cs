@@ -14,23 +14,12 @@ namespace testEntityFarmwork
     
     public partial class comment
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public comment()
-        {
-            this.comment1 = new HashSet<comment>();
-        }
-    
         public int id { get; set; }
         public string content_text { get; set; }
         public Nullable<System.DateTime> time { get; set; }
         public int author { get; set; }
         public Nullable<int> post_id { get; set; }
-        public Nullable<int> parent_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<comment> comment1 { get; set; }
-        public virtual comment comment2 { get; set; }
         public virtual post post { get; set; }
-        public virtual user user { get; set; }
     }
 }
