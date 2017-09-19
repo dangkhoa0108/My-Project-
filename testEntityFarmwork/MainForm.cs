@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
-    
+
 
     internal struct SomeData
     {
@@ -69,8 +69,8 @@ namespace testEntityFarmwork
 
         private static int CountPost()
         {
-                return ctx.posts
-                    .Count(o => o.status == 1);
+            return ctx.posts
+                .Count(o => o.status == 1);
         }
 
         private static IEnumerable<post> LoadPostPagination()
@@ -134,21 +134,32 @@ namespace testEntityFarmwork
                 .Where(item => item.status == 1 && item.post_title.Contains(tbSearch.Text))
                 .OrderByDescending(d => d.date_created)
                 .ToList();
-            var postOut = postPaging.Select(post => new SomeData
+            if (postPaging.Count > 0)
+            {
+                var postOut = postPaging.Select(post => new SomeData
                 {
                     Value = post.id,
                     Text = post.post_title
                 })
-                .ToList();
-            ListboxPostNow.DisplayMember = "Text";
-            ListboxPostNow.DataSource = postOut;
-            
+                    .ToList();
+                if (ListboxPostNow != null)
+                {
+                    ListboxPostNow.DisplayMember = "Text";
+                    ListboxPostNow.DataSource = postOut;
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No record!");
+            }
+
         }
 
         private void ListboxPostNow_DoubleClick(object sender, EventArgs e)
         {
-            int? value = ((SomeData) ListboxPostNow.SelectedItem).Value;
-            var postSelected = (int) value;
+            int? value = ((SomeData)ListboxPostNow.SelectedItem).Value;
+            var postSelected = (int)value;
             Visible = false;
             var mainForm = new MainForm();
             var postDetailForm = new PostDetailForm(postSelected);
