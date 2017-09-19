@@ -70,12 +70,6 @@
     <Compile Include="comment.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CommentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CommentForm.Designer.cs">
-      <DependentUpon>CommentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="EntityDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,9 +178,6 @@
     <Compile Include="user_role.cs">
       <DependentUpon>EntityDBModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CommentForm.resx">
-      <DependentUpon>CommentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

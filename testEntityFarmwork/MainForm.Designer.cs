@@ -31,7 +31,6 @@
             this.tbSearch = new MetroFramework.Controls.MetroTextBox();
             this.BtnShowProfileForm = new MetroFramework.Controls.MetroButton();
             this.lbAccount = new MetroFramework.Controls.MetroTile();
-            this.btnShowCommentForm = new MetroFramework.Controls.MetroButton();
             this.btnShowRoleForm = new MetroFramework.Controls.MetroButton();
             this.lbCurrentPage = new MetroFramework.Controls.MetroLabel();
             this.BtnNext = new MetroFramework.Controls.MetroButton();
@@ -81,15 +80,6 @@
             this.lbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbAccount.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.lbAccount.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            // 
-            // btnShowCommentForm
-            // 
-            this.btnShowCommentForm.Location = new System.Drawing.Point(27, 131);
-            this.btnShowCommentForm.Name = "btnShowCommentForm";
-            this.btnShowCommentForm.Size = new System.Drawing.Size(75, 23);
-            this.btnShowCommentForm.TabIndex = 3;
-            this.btnShowCommentForm.Text = "Comment";
-            this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // btnShowRoleForm
             // 
@@ -204,7 +194,6 @@
             // metroPanel1
             // 
             this.metroPanel1.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.btnShowCommentForm);
             this.metroPanel1.Controls.Add(this.btnShowRoleForm);
             this.metroPanel1.Controls.Add(this.btnShowPostForm);
             this.metroPanel1.Controls.Add(this.btnShowUserForm);
@@ -303,7 +292,6 @@
         private MetroFramework.Controls.MetroTextBox tbSearch;
         private MetroFramework.Controls.MetroButton BtnShowProfileForm;
         private MetroFramework.Controls.MetroTile lbAccount;
-        private MetroFramework.Controls.MetroButton btnShowCommentForm;
         private MetroFramework.Controls.MetroButton btnShowRoleForm;
         private MetroFramework.Controls.MetroLabel lbCurrentPage;
         private MetroFramework.Controls.MetroButton BtnNext;

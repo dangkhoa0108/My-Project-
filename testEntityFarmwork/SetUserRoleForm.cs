@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
-    public partial class SetUserRoleForm : Form
+    public partial class SetUserRoleForm : MetroFramework.Forms.MetroForm
     {
         AppEntities db = new AppEntities();
         public SetUserRoleForm()
@@ -116,7 +116,7 @@ namespace testEntityFarmwork
         {
             var mainForm = new MainForm();
             var setRole = new SetUserRoleForm();
-            setRole.Close();
+            setRole.Hide();
             mainForm.Show();
         }
 
