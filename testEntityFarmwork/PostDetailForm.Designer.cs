@@ -35,8 +35,8 @@
             this.tbComment = new MetroFramework.Controls.MetroTextBox();
             this.BtnComment = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.lbPostTitlea = new MetroFramework.Controls.MetroLabel();
             this.lbPostTitle = new MetroFramework.Controls.MetroLabel();
+            this.lbPostTitlea = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +101,15 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // lbPostTitle
+            // 
+            this.lbPostTitle.AutoSize = true;
+            this.lbPostTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbPostTitle.Location = new System.Drawing.Point(58, 2);
+            this.lbPostTitle.Name = "lbPostTitle";
+            this.lbPostTitle.Size = new System.Drawing.Size(0, 0);
+            this.lbPostTitle.TabIndex = 2;
+            // 
             // lbPostTitlea
             // 
             this.lbPostTitlea.AutoSize = true;
@@ -110,15 +119,6 @@
             this.lbPostTitlea.Size = new System.Drawing.Size(57, 25);
             this.lbPostTitlea.TabIndex = 2;
             this.lbPostTitlea.Text = "Title : ";
-            // 
-            // lbPostTitle
-            // 
-            this.lbPostTitle.AutoSize = true;
-            this.lbPostTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbPostTitle.Location = new System.Drawing.Point(58, 2);
-            this.lbPostTitle.Name = "lbPostTitle";
-            this.lbPostTitle.Size = new System.Drawing.Size(0, 0);
-            this.lbPostTitle.TabIndex = 2;
             // 
             // PostDetailForm
             // 
@@ -130,6 +130,8 @@
             this.Controls.Add(this.tbComment);
             this.Controls.Add(this.lbPostDetailComment);
             this.Controls.Add(this.rtbPostDetail);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PostDetailForm";
             this.Resizable = false;
             this.Text = "PostDetail";

@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace testEntityFarmwork {
-    public partial class ProfileForm : Form {
+namespace testEntityFarmwork
+{
+    public partial class ProfileForm : MetroFramework.Forms.MetroForm
+    {
         AppEntities db = new AppEntities();
-        public ProfileForm() {
+        public ProfileForm()
+        {
             InitializeComponent();
         }
 
-        private void ProfileForm_Load(object sender, EventArgs e) {
+        private void ProfileForm_Load(object sender, EventArgs e)
+        {
             var email1 = LoginInfo.email.ToString();
             txtRole.Enabled = false;
+            txtMail.Enabled = false;
             //var i = (from usro in db.user_role
             //         join ro in db.roles on usro.role_id equals ro.role_id
             //         join us in db.users on usro.user_id equals us.id
@@ -37,26 +42,31 @@ namespace testEntityFarmwork {
         }
 
         //back Form
-        private void backMainForm() {
+        private void backMainForm()
+        {
             var mainForm = new MainForm();
             var profile = new ProfileForm();
-            profile.Close();
+            profile.Hide();
             mainForm.Show();
         }
         // Close window
 
-        private void ProfileForm_FormClosing(object sender, FormClosingEventArgs e) {
+        private void ProfileForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
             var mainForm = new MainForm();
             var profile = new ProfileForm();
-            profile.Close();
+            profile.Hide();
             mainForm.Show();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e) {
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
             updateProfile();
         }
-        private void updateProfile() {
-            try {
+        private void updateProfile()
+        {
+            try
+            {
                 var email1 = LoginInfo.email;
                 user user = db.users.Where(u => u.email.Equals(email1)).FirstOrDefault();
                 user.username = txtName.Text;
@@ -71,9 +81,10 @@ namespace testEntityFarmwork {
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e) {
+        private void btnBack_Click(object sender, EventArgs e)
+        {
             var mainForm = new MainForm();
-            this.Close();
+            this.Hide();
 
             mainForm.Show();
         }

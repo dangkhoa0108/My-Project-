@@ -22,7 +22,7 @@ namespace testEntityFarmwork
         {
             if (role.Equals("USER") || role ==  "USER") {
                 cbPublish.Hide();
-                label4.Hide();
+                //label4.Hide();
                 cbbUser.Enabled = false;
                
             }

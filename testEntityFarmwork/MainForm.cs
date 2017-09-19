@@ -47,13 +47,13 @@ namespace testEntityFarmwork
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             var mainForm = new MainForm();
-            mainForm.Close();
+            mainForm.Hide();
             Application.Exit();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            pncontrolPanel.Hide();
             StartTimer();
             var listPostPagination = LoadPostPagination();
             var postOut = listPostPagination.Select(post => new SomeData

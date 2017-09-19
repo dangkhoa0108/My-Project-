@@ -41,13 +41,13 @@
             this.ListboxPostNow = new System.Windows.Forms.ListBox();
             this.BtnShowMyPostForm = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.pncontrolPanel = new MetroFramework.Controls.MetroPanel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.lbClock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.metroPanel2.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
+            this.pncontrolPanel.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -191,24 +191,24 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroPanel1
+            // pncontrolPanel
             // 
-            this.metroPanel1.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.btnShowRoleForm);
-            this.metroPanel1.Controls.Add(this.btnShowPostForm);
-            this.metroPanel1.Controls.Add(this.btnShowUserForm);
-            this.metroPanel1.Controls.Add(this.metroTile1);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(31, 158);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(129, 172);
-            this.metroPanel1.TabIndex = 12;
-            this.metroPanel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.pncontrolPanel.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.pncontrolPanel.Controls.Add(this.btnShowRoleForm);
+            this.pncontrolPanel.Controls.Add(this.btnShowPostForm);
+            this.pncontrolPanel.Controls.Add(this.btnShowUserForm);
+            this.pncontrolPanel.Controls.Add(this.metroTile1);
+            this.pncontrolPanel.HorizontalScrollbarBarColor = true;
+            this.pncontrolPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.pncontrolPanel.HorizontalScrollbarSize = 10;
+            this.pncontrolPanel.Location = new System.Drawing.Point(31, 158);
+            this.pncontrolPanel.Name = "pncontrolPanel";
+            this.pncontrolPanel.Size = new System.Drawing.Size(129, 172);
+            this.pncontrolPanel.TabIndex = 12;
+            this.pncontrolPanel.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.pncontrolPanel.VerticalScrollbarBarColor = true;
+            this.pncontrolPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.pncontrolPanel.VerticalScrollbarSize = 10;
             // 
             // metroTile1
             // 
@@ -266,11 +266,13 @@
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(776, 488);
             this.Controls.Add(this.metroPanel2);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.pncontrolPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.metroPanel3);
             this.DisplayHeader = false;
             this.Location = new System.Drawing.Point(800, 200);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(500, 30, 0, 0);
             this.Resizable = false;
@@ -279,7 +281,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.metroPanel2.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
+            this.pncontrolPanel.ResumeLayout(false);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -302,7 +304,7 @@
         private System.Windows.Forms.ListBox ListboxPostNow;
         private MetroFramework.Controls.MetroButton BtnShowMyPostForm;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel pncontrolPanel;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private System.Windows.Forms.Label lbClock;

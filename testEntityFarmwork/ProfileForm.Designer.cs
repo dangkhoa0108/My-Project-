@@ -28,97 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtRole = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnBack = new MetroFramework.Controls.MetroButton();
+            this.txtName = new MetroFramework.Controls.MetroTextBox();
+            this.txtMail = new MetroFramework.Controls.MetroTextBox();
+            this.txtRole = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(95, 55);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(165, 20);
-            this.txtName.TabIndex = 1;
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(95, 98);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(165, 20);
-            this.txtMail.TabIndex = 2;
-            // 
-            // txtRole
-            // 
-            this.txtRole.Location = new System.Drawing.Point(95, 143);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(165, 20);
-            this.txtRole.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mail";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Role";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(196, 216);
+            this.btnUpdate.Location = new System.Drawing.Point(8, 189);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(101, 28);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(71, 216);
+            this.btnBack.Location = new System.Drawing.Point(180, 189);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(101, 28);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(122, 60);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(159, 27);
+            this.txtName.TabIndex = 8;
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(122, 98);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(159, 27);
+            this.txtMail.TabIndex = 9;
+            // 
+            // txtRole
+            // 
+            this.txtRole.Location = new System.Drawing.Point(122, 139);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(159, 27);
+            this.txtRole.TabIndex = 10;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(8, 60);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel1.TabIndex = 11;
+            this.metroLabel1.Text = "Name";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(8, 106);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(34, 19);
+            this.metroLabel2.TabIndex = 12;
+            this.metroLabel2.Text = "Mail";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(8, 147);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(35, 19);
+            this.metroLabel3.TabIndex = 13;
+            this.metroLabel3.Text = "Role";
             // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 278);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(302, 248);
+            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtRole);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnUpdate);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProfileForm";
             this.Text = "Profile";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfileForm_FormClosing);
@@ -129,14 +129,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtRole;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnBack;
+        private MetroFramework.Controls.MetroButton btnUpdate;
+        private MetroFramework.Controls.MetroButton btnBack;
+        private MetroFramework.Controls.MetroTextBox txtName;
+        private MetroFramework.Controls.MetroTextBox txtMail;
+        private MetroFramework.Controls.MetroTextBox txtRole;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

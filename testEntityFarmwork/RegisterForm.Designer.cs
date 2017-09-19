@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.cbTerm = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.BtnResetPasword = new MetroFramework.Controls.MetroButton();
             this.BtnShowLogin = new MetroFramework.Controls.MetroButton();
@@ -43,7 +44,6 @@
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.txtName = new MetroFramework.Controls.MetroTextBox();
-            this.cbTerm = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,19 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // cbTerm
+            // 
+            this.cbTerm.AutoSize = true;
+            this.cbTerm.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.cbTerm.Location = new System.Drawing.Point(117, 195);
+            this.cbTerm.Name = "cbTerm";
+            this.cbTerm.Size = new System.Drawing.Size(29, 19);
+            this.cbTerm.TabIndex = 9;
+            this.cbTerm.Text = " ";
+            this.cbTerm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.cbTerm.UseStyleColors = true;
+            this.cbTerm.UseVisualStyleBackColor = true;
             // 
             // metroLabel7
             // 
@@ -204,25 +217,14 @@
             this.txtName.Size = new System.Drawing.Size(210, 23);
             this.txtName.TabIndex = 2;
             // 
-            // cbTerm
-            // 
-            this.cbTerm.AutoSize = true;
-            this.cbTerm.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.cbTerm.Location = new System.Drawing.Point(117, 195);
-            this.cbTerm.Name = "cbTerm";
-            this.cbTerm.Size = new System.Drawing.Size(29, 19);
-            this.cbTerm.TabIndex = 9;
-            this.cbTerm.Text = " ";
-            this.cbTerm.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.cbTerm.UseStyleColors = true;
-            this.cbTerm.UseVisualStyleBackColor = true;
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 364);
             this.Controls.Add(this.metroPanel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);

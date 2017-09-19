@@ -210,6 +210,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvPost);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PostForm";
             this.Text = "Main";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PostForm_FormClosed);
