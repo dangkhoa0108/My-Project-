@@ -170,12 +170,17 @@ namespace testEntityFarmwork
             profileForm.Show();
         }
 
+        private void btnShowCommentForm_Click(object sender, EventArgs e)
+        {
+            var commentForm = new CommentForm();
+            this.Hide();
+            commentForm.Show();
+        }
+
         private void btnShowRoleForm_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            var mainForm = new MainForm();
             var roleForm = new RoleForm();
-            mainForm.Hide();
+            this.Hide();
             roleForm.Show();
         }
     }

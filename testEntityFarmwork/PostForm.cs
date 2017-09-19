@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 namespace testEntityFarmwork
 {
-    public partial class PostForm : Form
+    public partial class PostForm : MetroFramework.Forms.MetroForm
     {
 
         AppEntities db = new AppEntities();
@@ -125,9 +125,9 @@ namespace testEntityFarmwork
         private void PostForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             var mainForm = new MainForm();
-            var postForm = new PostForm();
-            postForm.Close();
+            this.Hide();
             mainForm.Show();
+
         }
         // delete Post
         private void BtnDeletePost_Click(object sender, EventArgs e)
@@ -196,6 +196,14 @@ namespace testEntityFarmwork
         private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             deletePost();
+        }
+
+        private void btnClearPost_Click(object sender, EventArgs e)
+        {
+            tbTitle.Clear();
+            tbContent.Clear();
+            cbPublish.Checked = false;
+            cbbUser.Refresh();
         }
     }
 }
