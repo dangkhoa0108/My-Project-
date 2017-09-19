@@ -25,13 +25,14 @@ namespace testEntityFarmwork
             dgvRole.DataSource = (from ro in db.roles
                                   select new
                                   {
+                                      ro.role_id,
                                       ro.role_name
                                   }).ToList();
         }
         void DataBinding()
         {
             tbRoleName.DataBindings.Clear();
-            tbRoleName.DataBindings.Add(new Binding("Text", dgvRole, "role_name"));
+            tbRoleName.DataBindings.Add(new Binding("Text", dgvRole.DataSource, "role_name"));
 
         }
         void Add()
@@ -54,7 +55,7 @@ namespace testEntityFarmwork
         {
             try
             {
-                int id = int.Parse(dgvRole.SelectedCells[0].OwningRow.Cells["id"].Value.ToString());
+                int id = int.Parse(dgvRole.SelectedCells[0].OwningRow.Cells["role_id"].Value.ToString());
                 role edit = db.roles.Find(id);
                 edit.role_name = tbRoleName.Text;
                 db.SaveChanges();
@@ -72,7 +73,7 @@ namespace testEntityFarmwork
         {
             try
             {
-                int id = int.Parse(dgvRole.SelectedCells[0].OwningRow.Cells["id"].Value.ToString());
+                int id = int.Parse(dgvRole.SelectedCells[0].OwningRow.Cells["role_id"].Value.ToString());
                 role del = db.roles.Where(u => u.role_id == id).SingleOrDefault();
                 db.roles.Remove(del);
                 db.SaveChanges();
@@ -101,12 +102,28 @@ namespace testEntityFarmwork
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            Edit();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Delete();
+        }
 
+        private void RoleForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var mainForm = new MainForm();
+            var roleForm = new RoleForm();
+            roleForm.Close();
+            mainForm.Show();
+        }
+
+        private void btnSetRole_Click(object sender, EventArgs e)
+        {
+            var roleForm = new RoleForm();
+            var setRole = new SetUserRoleForm();
+            roleForm.Close();
+            setRole.Show();
         }
     }
 }
