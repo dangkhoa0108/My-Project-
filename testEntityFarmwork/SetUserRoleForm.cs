@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
-    public partial class SetUserRoleForm : Form
+    public partial class SetUserRoleForm : MetroFramework.Forms.MetroForm
     {
         AppEntities db = new AppEntities();
         public SetUserRoleForm()
@@ -26,7 +26,7 @@ namespace testEntityFarmwork
                                      join ro in db.roles on usro.role_id equals ro.role_id
                                      join us in db.users on usro.user_id equals us.id
                                      select new
-                                     {
+                                     { 
                                          id = usro.role_user_id,
                                          role = ro.role_name,
                                          username = us.username
@@ -116,7 +116,7 @@ namespace testEntityFarmwork
         {
             var mainForm = new MainForm();
             var setRole = new SetUserRoleForm();
-            setRole.Close();
+            setRole.Hide();
             mainForm.Show();
         }
 
