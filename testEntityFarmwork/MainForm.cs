@@ -169,5 +169,19 @@ namespace testEntityFarmwork
             mainForm.Hide();
             profileForm.Show();
         }
+
+        private void btnShowCommentForm_Click(object sender, EventArgs e)
+        {
+            var commentForm = new CommentForm();
+            this.Hide();
+            commentForm.Show();
+        }
+
+        private void btnShowRoleForm_Click(object sender, EventArgs e)
+        {
+            var roleForm = new RoleForm();
+            this.Hide();
+            roleForm.Show();
+        }
     }
 }

@@ -65,11 +65,13 @@ namespace testEntityFarmwork
                     smtp.Credentials = new NetworkCredential("smartosc.net@gmail.com", "123456789asdasd");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtp.Send(message);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(@"err: " + ex.Message);
                 }
+                MessageBox.Show(@"Nice ! You can login now");
             }
         }
 

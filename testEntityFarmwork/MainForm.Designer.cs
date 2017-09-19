@@ -90,6 +90,7 @@
             this.btnShowCommentForm.TabIndex = 3;
             this.btnShowCommentForm.Text = "Comment";
             this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnShowCommentForm.Click += new System.EventHandler(this.btnShowCommentForm_Click);
             // 
             // btnShowRoleForm
             // 
@@ -99,6 +100,7 @@
             this.btnShowRoleForm.TabIndex = 3;
             this.btnShowRoleForm.Text = "Role";
             this.btnShowRoleForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnShowRoleForm.Click += new System.EventHandler(this.btnShowRoleForm_Click);
             // 
             // lbCurrentPage
             // 
