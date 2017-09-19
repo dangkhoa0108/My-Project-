@@ -89,6 +89,7 @@
             this.btnShowCommentForm.TabIndex = 3;
             this.btnShowCommentForm.Text = "Comment";
             this.btnShowCommentForm.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnShowCommentForm.Click += new System.EventHandler(this.btnShowCommentForm_Click);
             // 
             // btnShowRoleForm
             // 

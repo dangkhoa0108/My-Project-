@@ -205,6 +205,7 @@
             this.Controls.Add(this.dgvComment);
             this.Name = "CommentForm";
             this.Text = "CommentForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CommentForm_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComment)).EndInit();
