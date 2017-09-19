@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace testEntityFarmwork
 {
+    
+
     internal struct SomeData
     {
         public int Value { get; set; }
@@ -14,8 +16,9 @@ namespace testEntityFarmwork
 
     public partial class MainForm : MetroFramework.Forms.MetroForm
     {
+        static AppEntities ctx = new AppEntities();
         private const int NumberPostPerPage = 16;
-        private static int _realPage;
+        public static int RealPage;
         private Timer _t;
 
         public MainForm()
@@ -66,28 +69,22 @@ namespace testEntityFarmwork
 
         private static int CountPost()
         {
-            using (var ctx = new AppEntities())
-            {
                 return ctx.posts
                     .Count(o => o.status == 1);
-            }
         }
 
         private static IEnumerable<post> LoadPostPagination()
         {
             try
             {
-                using (var ctx = new AppEntities())
-                {
-                    var postPaging = ctx.posts
-                        .Where(item => item.status == 1)
-                        .Distinct()
-                        .OrderByDescending(d => d.date_created)
-                        .Skip(_realPage * NumberPostPerPage)
-                        .Take(NumberPostPerPage)
-                        .ToList();
-                    return postPaging;
-                }
+                var postPaging = ctx.posts
+                    .Where(item => item.status == 1)
+                    .Distinct()
+                    .OrderByDescending(d => d.date_created)
+                    .Skip(RealPage * NumberPostPerPage)
+                    .Take(NumberPostPerPage)
+                    .ToList();
+                return postPaging;
             }
             catch (DbEntityValidationException ex)
             {
@@ -119,11 +116,11 @@ namespace testEntityFarmwork
 
         private void SettingPagination()
         {
-            BtnPrevious.Enabled = _realPage != 0;
-            BtnNext.Enabled = CountPost() < NumberPostPerPage * _realPage ||
-                              CountPost() > NumberPostPerPage * (_realPage + 1);
+            BtnPrevious.Enabled = RealPage != 0;
+            BtnNext.Enabled = CountPost() < NumberPostPerPage * RealPage ||
+                              CountPost() > NumberPostPerPage * (RealPage + 1);
 
-            lbCurrentPage.Text = _realPage.ToString();
+            lbCurrentPage.Text = RealPage.ToString();
         }
 
         private void BtnPrevious_Click(object sender, EventArgs e)
@@ -133,21 +130,19 @@ namespace testEntityFarmwork
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            using (var ctx = new AppEntities())
-            {
-                var postPaging = ctx.posts
-                    .Where(item => item.status == 1 && item.post_title.Contains(tbSearch.Text))
-                    .OrderByDescending(d => d.date_created)
-                    .ToList();
-                var postOut = postPaging.Select(post => new SomeData
-                    {
-                        Value = post.id,
-                        Text = post.post_title
-                    })
-                    .ToList();
-                ListboxPostNow.DisplayMember = "Text";
-                ListboxPostNow.DataSource = postOut;
-            }
+            var postPaging = ctx.posts
+                .Where(item => item.status == 1 && item.post_title.Contains(tbSearch.Text))
+                .OrderByDescending(d => d.date_created)
+                .ToList();
+            var postOut = postPaging.Select(post => new SomeData
+                {
+                    Value = post.id,
+                    Text = post.post_title
+                })
+                .ToList();
+            ListboxPostNow.DisplayMember = "Text";
+            ListboxPostNow.DataSource = postOut;
+            
         }
 
         private void ListboxPostNow_DoubleClick(object sender, EventArgs e)
@@ -166,13 +161,13 @@ namespace testEntityFarmwork
 
         }
 
-        private void btnShowCommentForm_Click(object sender, EventArgs e)
+        private void BtnShowProfileForm_Click(object sender, EventArgs e)
         {
             Visible = false;
             var mainForm = new MainForm();
-            var commentForm = new CommentForm();
+            var profileForm = new ProfileForm();
             mainForm.Hide();
-            commentForm.Show();
+            profileForm.Show();
         }
     }
 }
