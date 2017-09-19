@@ -9,5 +9,6 @@ namespace testEntityFarmwork
   public static  class LoginInfo
     {
         public static string email;
+        public static string role;
     }
 }

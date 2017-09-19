@@ -26,7 +26,7 @@ namespace testEntityFarmwork
                                      join ro in db.roles on usro.role_id equals ro.role_id
                                      join us in db.users on usro.user_id equals us.id
                                      select new
-                                     {
+                                     { 
                                          id = usro.role_user_id,
                                          role = ro.role_name,
                                          username = us.username

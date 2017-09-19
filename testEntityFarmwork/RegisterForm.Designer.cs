@@ -35,7 +35,6 @@
             this.BtnRegister = new MetroFramework.Controls.MetroButton();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -44,18 +43,19 @@
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.txtName = new MetroFramework.Controls.MetroTextBox();
+            this.cbTerm = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.cbTerm);
             this.metroPanel1.Controls.Add(this.metroLabel7);
             this.metroPanel1.Controls.Add(this.BtnResetPasword);
             this.metroPanel1.Controls.Add(this.BtnShowLogin);
             this.metroPanel1.Controls.Add(this.BtnRegister);
             this.metroPanel1.Controls.Add(this.metroLabel6);
             this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.metroToggle1);
             this.metroPanel1.Controls.Add(this.metroLabel4);
             this.metroPanel1.Controls.Add(this.metroLabel3);
             this.metroPanel1.Controls.Add(this.metroLabel2);
@@ -120,30 +120,21 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(117, 214);
+            this.metroLabel6.Location = new System.Drawing.Point(117, 217);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(191, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(97, 19);
             this.metroLabel6.TabIndex = 5;
-            this.metroLabel6.Text = "accepted terms and conditions.";
+            this.metroLabel6.Text = "and conditions.";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(203, 194);
+            this.metroLabel5.Location = new System.Drawing.Point(147, 195);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(100, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(194, 19);
             this.metroLabel5.TabIndex = 5;
-            this.metroLabel5.Text = "I have read and";
-            // 
-            // metroToggle1
-            // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(117, 194);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle1.TabIndex = 4;
-            this.metroToggle1.Text = "Off";
-            this.metroToggle1.UseVisualStyleBackColor = true;
+            this.metroLabel5.Text = "I have read and accepted terms";
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // metroLabel4
             // 
@@ -213,6 +204,19 @@
             this.txtName.Size = new System.Drawing.Size(210, 23);
             this.txtName.TabIndex = 2;
             // 
+            // cbTerm
+            // 
+            this.cbTerm.AutoSize = true;
+            this.cbTerm.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.cbTerm.Location = new System.Drawing.Point(117, 195);
+            this.cbTerm.Name = "cbTerm";
+            this.cbTerm.Size = new System.Drawing.Size(29, 19);
+            this.cbTerm.TabIndex = 9;
+            this.cbTerm.Text = " ";
+            this.cbTerm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.cbTerm.UseStyleColors = true;
+            this.cbTerm.UseVisualStyleBackColor = true;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,7 +243,6 @@
         private MetroFramework.Controls.MetroButton BtnRegister;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroToggle metroToggle1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -248,5 +251,6 @@
         private MetroFramework.Controls.MetroTextBox txtPassword;
         private MetroFramework.Controls.MetroTextBox txtEmail;
         private MetroFramework.Controls.MetroTextBox txtName;
+        private MetroFramework.Controls.MetroCheckBox cbTerm;
     }
 }
