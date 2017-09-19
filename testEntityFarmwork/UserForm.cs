@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace testEntityFarmwork
 {
-    public partial class UserForm : Form
+    public partial class UserForm : MetroFramework.Forms.MetroForm
     {
         AppEntities db = new AppEntities();
 
@@ -116,6 +116,24 @@ namespace testEntityFarmwork
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             EditUser();
+        }
+
+        private void tbUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                tbEmail.Focus();
+        }
+
+        private void tbEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                tbPassword.Focus();
+        }
+
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                btnAdd.Focus();
         }
     }
 }

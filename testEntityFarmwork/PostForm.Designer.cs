@@ -224,13 +224,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn posttitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postcontentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postauthorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datecreatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateupdatedDataGridViewTextBoxColumn;
+
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroButton btnAddPost;
         private MetroFramework.Controls.MetroButton btnClearPost;
