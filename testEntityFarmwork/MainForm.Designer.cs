@@ -99,6 +99,7 @@
             this.btnShowRoleForm.TabIndex = 3;
             this.btnShowRoleForm.Text = "Role";
             this.btnShowRoleForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnShowRoleForm.Click += new System.EventHandler(this.btnShowRoleForm_Click);
             // 
             // lbCurrentPage
             // 

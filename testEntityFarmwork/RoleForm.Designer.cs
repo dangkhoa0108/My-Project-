@@ -35,6 +35,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSetRole = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).BeginInit();
             this.SuspendLayout();
@@ -75,9 +76,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 178);
+            this.btnAdd.Location = new System.Drawing.Point(6, 178);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(73, 24);
+            this.btnAdd.Size = new System.Drawing.Size(64, 24);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(107, 178);
+            this.btnEdit.Location = new System.Drawing.Point(76, 178);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(73, 24);
+            this.btnEdit.Size = new System.Drawing.Size(63, 24);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -95,19 +96,30 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(205, 178);
+            this.btnDelete.Location = new System.Drawing.Point(155, 178);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(73, 24);
+            this.btnDelete.Size = new System.Drawing.Size(64, 24);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnSetRole
+            // 
+            this.btnSetRole.Location = new System.Drawing.Point(227, 178);
+            this.btnSetRole.Name = "btnSetRole";
+            this.btnSetRole.Size = new System.Drawing.Size(64, 24);
+            this.btnSetRole.TabIndex = 8;
+            this.btnSetRole.Text = "Set Role";
+            this.btnSetRole.UseVisualStyleBackColor = true;
+            this.btnSetRole.Click += new System.EventHandler(this.btnSetRole_Click);
+            // 
             // RoleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 218);
+            this.ClientSize = new System.Drawing.Size(302, 218);
+            this.Controls.Add(this.btnSetRole);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -120,6 +132,7 @@
             this.Name = "RoleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoleForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RoleForm_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRole)).EndInit();
             this.ResumeLayout(false);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSetRole;
     }
 }

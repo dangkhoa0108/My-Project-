@@ -169,5 +169,14 @@ namespace testEntityFarmwork
             mainForm.Hide();
             profileForm.Show();
         }
+
+        private void btnShowRoleForm_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            var mainForm = new MainForm();
+            var roleForm = new RoleForm();
+            mainForm.Hide();
+            roleForm.Show();
+        }
     }
 }
