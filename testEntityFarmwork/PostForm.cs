@@ -11,7 +11,7 @@ namespace testEntityFarmwork
         AppEntities db = new AppEntities();
         String email = LoginInfo.email.ToString();
         String role = LoginInfo.role.ToString();
-        
+
         public PostForm()
         {
 
@@ -20,13 +20,14 @@ namespace testEntityFarmwork
 
         private void Main_Load(object sender, EventArgs e)
         {
-            if (role.Equals("USER") || role ==  "USER") {
+            if (role.Equals("USER") || role == "USER")
+            {
                 cbPublish.Hide();
                 //label4.Hide();
                 cbbUser.Enabled = false;
-               
+
             }
-            
+
             loadUser();
             loadPost();
 
