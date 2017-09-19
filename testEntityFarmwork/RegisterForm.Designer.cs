@@ -40,10 +40,10 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
+            this.txtEmail = new MetroFramework.Controls.MetroTextBox();
+            this.txtName = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +60,10 @@
             this.metroPanel1.Controls.Add(this.metroLabel3);
             this.metroPanel1.Controls.Add(this.metroLabel2);
             this.metroPanel1.Controls.Add(this.metroLabel1);
-            this.metroPanel1.Controls.Add(this.metroTextBox4);
-            this.metroPanel1.Controls.Add(this.metroTextBox3);
-            this.metroPanel1.Controls.Add(this.metroTextBox2);
-            this.metroPanel1.Controls.Add(this.metroTextBox1);
+            this.metroPanel1.Controls.Add(this.txtPassword2);
+            this.metroPanel1.Controls.Add(this.txtPassword);
+            this.metroPanel1.Controls.Add(this.txtEmail);
+            this.metroPanel1.Controls.Add(this.txtName);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
@@ -115,6 +115,7 @@
             this.BtnRegister.TabIndex = 6;
             this.BtnRegister.Text = "Submit";
             this.BtnRegister.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // metroLabel6
             // 
@@ -180,33 +181,37 @@
             this.metroLabel1.TabIndex = 3;
             this.metroLabel1.Text = "Full Name";
             // 
-            // metroTextBox4
+            // txtPassword2
             // 
-            this.metroTextBox4.Location = new System.Drawing.Point(117, 153);
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.Size = new System.Drawing.Size(210, 23);
-            this.metroTextBox4.TabIndex = 2;
+            this.txtPassword2.Location = new System.Drawing.Point(117, 153);
+            this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.PasswordChar = '●';
+            this.txtPassword2.Size = new System.Drawing.Size(210, 23);
+            this.txtPassword2.TabIndex = 2;
+            this.txtPassword2.UseSystemPasswordChar = true;
             // 
-            // metroTextBox3
+            // txtPassword
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(117, 124);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(210, 23);
-            this.metroTextBox3.TabIndex = 2;
+            this.txtPassword.Location = new System.Drawing.Point(117, 124);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(210, 23);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // metroTextBox2
+            // txtEmail
             // 
-            this.metroTextBox2.Location = new System.Drawing.Point(117, 95);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(210, 23);
-            this.metroTextBox2.TabIndex = 2;
+            this.txtEmail.Location = new System.Drawing.Point(117, 95);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(210, 23);
+            this.txtEmail.TabIndex = 2;
             // 
-            // metroTextBox1
+            // txtName
             // 
-            this.metroTextBox1.Location = new System.Drawing.Point(117, 66);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(210, 23);
-            this.metroTextBox1.TabIndex = 2;
+            this.txtName.Location = new System.Drawing.Point(117, 66);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(210, 23);
+            this.txtName.TabIndex = 2;
             // 
             // RegisterForm
             // 
@@ -216,6 +221,8 @@
             this.Controls.Add(this.metroPanel1);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -237,9 +244,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtPassword2;
+        private MetroFramework.Controls.MetroTextBox txtPassword;
+        private MetroFramework.Controls.MetroTextBox txtEmail;
+        private MetroFramework.Controls.MetroTextBox txtName;
     }
 }
