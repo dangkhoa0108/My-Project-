@@ -42,12 +42,18 @@ namespace testEntityFarmwork
         {
             try
             {
-                user user = new user { username = tbUsername.Text, password = tbPassword.Text, email = tbEmail.Text };
-                db.users.Add(user);
-                db.SaveChanges();
-                MessageBox.Show("Add success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData();
-                DataBinding();
+                string emailcheck = tbEmail.Text.ToString();
+                var check = db.users.Where(us => us.email.Equals(emailcheck)).SingleOrDefault();
+                if (check == null)
+                {
+                    user user = new user { username = tbUsername.Text, password = tbPassword.Text, email = tbEmail.Text };
+                    db.users.Add(user);
+                    db.SaveChanges();
+                    MessageBox.Show("Add success", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    DataBinding();
+                }
+                else MessageBox.Show("User already!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
