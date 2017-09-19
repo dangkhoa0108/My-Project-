@@ -35,7 +35,7 @@ namespace testEntityFarmwork
             txtName.Text = user.username;
             txtMail.Text = email1;
             //txtRole.Text = i.role.ToString();
-            txtRole.Text = LoginInfo.role.ToString();
+            txtRole.Text = LoginInfo.role;
 
 
 

@@ -78,7 +78,7 @@ namespace testEntityFarmwork
                 content_text = tbComment.Text,
                 time = DateTime.Now,
                 post_id = _postSelect,
-                author = 1,
+                author = LoginInfo.userId,
                     
             });
             ctx.SaveChanges();

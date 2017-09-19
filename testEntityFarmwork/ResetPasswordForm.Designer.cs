@@ -92,7 +92,7 @@
             // BtnResetPassword
             // 
             this.BtnResetPassword.Highlight = true;
-            this.BtnResetPassword.Location = new System.Drawing.Point(112, 106);
+            this.BtnResetPassword.Location = new System.Drawing.Point(112, 117);
             this.BtnResetPassword.Name = "BtnResetPassword";
             this.BtnResetPassword.Size = new System.Drawing.Size(59, 23);
             this.BtnResetPassword.TabIndex = 4;
