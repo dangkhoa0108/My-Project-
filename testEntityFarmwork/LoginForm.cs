@@ -40,10 +40,12 @@ namespace testEntityFarmwork
                          select new {
                              role = ro.role_name
                          }).FirstOrDefault();
+                var userDb = (from u in _ctx.users where u.email == inEmail select u).FirstOrDefault();
                 var mainForm = new MainForm();
                 this.Hide();
+                if (userDb != null) LoginInfo.userId = userDb.id;
                 LoginInfo.email = inEmail;
-                LoginInfo.role = i.role.ToString();
+                LoginInfo.role = i?.role.ToString();
                 mainForm.Show();
             }
             else
@@ -98,6 +100,22 @@ namespace testEntityFarmwork
             var resetPasswordForm = new ResetPasswordForm();
             this.Hide();
             resetPasswordForm.Show();
+        }
+
+        private void tbLoginPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) 13)
+            {
+                BtnSubmitLogin_Click(sender, e);
+            }
+        }
+
+        private void tbLoginEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) 13)
+            {
+                BtnSubmitLogin_Click(sender, e);
+            }
         }
     }
 }

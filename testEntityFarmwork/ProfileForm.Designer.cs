@@ -40,39 +40,40 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(8, 189);
+            this.btnUpdate.Location = new System.Drawing.Point(122, 205);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(159, 28);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(180, 189);
+            this.btnBack.Location = new System.Drawing.Point(8, 205);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(101, 28);
+            this.btnBack.Size = new System.Drawing.Size(54, 28);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(122, 60);
+            this.txtName.Location = new System.Drawing.Point(122, 71);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(159, 27);
             this.txtName.TabIndex = 8;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(122, 98);
+            this.txtMail.Location = new System.Drawing.Point(122, 109);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(159, 27);
             this.txtMail.TabIndex = 9;
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(122, 139);
+            this.txtRole.Location = new System.Drawing.Point(122, 150);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(159, 27);
             this.txtRole.TabIndex = 10;
@@ -80,7 +81,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 60);
+            this.metroLabel1.Location = new System.Drawing.Point(8, 71);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(45, 19);
             this.metroLabel1.TabIndex = 11;
@@ -89,7 +90,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 106);
+            this.metroLabel2.Location = new System.Drawing.Point(8, 117);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(34, 19);
             this.metroLabel2.TabIndex = 12;
@@ -98,7 +99,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 147);
+            this.metroLabel3.Location = new System.Drawing.Point(8, 158);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(35, 19);
             this.metroLabel3.TabIndex = 13;
@@ -108,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 248);
+            this.ClientSize = new System.Drawing.Size(302, 256);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -120,6 +121,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProfileForm";
+            this.Resizable = false;
             this.Text = "Profile";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfileForm_FormClosing);
             this.Load += new System.EventHandler(this.ProfileForm_Load);

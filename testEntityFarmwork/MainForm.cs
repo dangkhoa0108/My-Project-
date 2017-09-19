@@ -46,15 +46,34 @@ namespace testEntityFarmwork
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var mainForm = new MainForm();
-            mainForm.Hide();
             Application.Exit();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            pncontrolPanel.Hide();
+            if (LoginInfo.role.ToLower() != "admin")
+            {
+                pncontrolPanel.Hide();
+            }
             StartTimer();
+            var listCategory = (from cate in ctx.categories select cate).ToList();
+
+            var headOfCategory = new SomeData
+            {
+                Value = 0,
+                Text = "All Category"
+            };
+            
+            var categoryOut = listCategory.Select(category => new SomeData
+            {
+                Value = category.category_id,
+                Text = category.display_name
+            }).ToList();
+
+            categoryOut.Insert(0, headOfCategory);
+
+            cbbCategory.DisplayMember = "Text";
+            cbbCategory.DataSource = categoryOut;
             var listPostPagination = LoadPostPagination();
             var postOut = listPostPagination.Select(post => new SomeData
             {

@@ -147,5 +147,10 @@ namespace testEntityFarmwork {
 
             }
         }
+
+        private void LinkTerms_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("You Hate Don Lang", "Our Term", MessageBoxButtons.OKCancel);
+        }
     }
 }

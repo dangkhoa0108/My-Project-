@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnForgetPassword = new MetroFramework.Controls.MetroButton();
             this.BtnShowRegister = new MetroFramework.Controls.MetroButton();
             this.BtnSubmitLogin = new MetroFramework.Controls.MetroButton();
@@ -38,11 +38,12 @@
             this.tbLoginPassword = new MetroFramework.Controls.MetroTextBox();
             this.tbLoginEmail = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroLabel3);
+            this.metroPanel1.Controls.Add(this.pictureBox1);
             this.metroPanel1.Controls.Add(this.BtnForgetPassword);
             this.metroPanel1.Controls.Add(this.BtnShowRegister);
             this.metroPanel1.Controls.Add(this.BtnSubmitLogin);
@@ -61,17 +62,15 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLabel3
+            // pictureBox1
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(97, 16);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(54, 25);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Login";
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel3.UseStyleColors = true;
+            this.pictureBox1.Image = global::testEntityFarmwork.Properties.Resources.SmartOSC;
+            this.pictureBox1.Location = new System.Drawing.Point(97, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(98, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // BtnForgetPassword
             // 
@@ -132,6 +131,7 @@
             this.tbLoginPassword.TabIndex = 2;
             this.tbLoginPassword.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbLoginPassword.UseStyleColors = true;
+            this.tbLoginPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLoginPassword_KeyPress);
             // 
             // tbLoginEmail
             // 
@@ -142,6 +142,7 @@
             this.tbLoginEmail.TabIndex = 2;
             this.tbLoginEmail.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbLoginEmail.UseStyleColors = true;
+            this.tbLoginEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLoginEmail_KeyPress);
             // 
             // LoginForm
             // 
@@ -152,10 +153,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.Resizable = false;
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,6 +173,6 @@
         private MetroFramework.Controls.MetroTextBox tbLoginEmail;
         private MetroFramework.Controls.MetroButton BtnForgetPassword;
         private MetroFramework.Controls.MetroButton BtnShowRegister;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

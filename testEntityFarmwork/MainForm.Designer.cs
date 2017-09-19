@@ -46,6 +46,7 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.lbClock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbCategory = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel2.SuspendLayout();
             this.pncontrolPanel.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             // BtnShowProfileForm
             // 
-            this.BtnShowProfileForm.Location = new System.Drawing.Point(16, 32);
+            this.BtnShowProfileForm.Location = new System.Drawing.Point(16, 41);
             this.BtnShowProfileForm.Name = "BtnShowProfileForm";
             this.BtnShowProfileForm.Size = new System.Drawing.Size(98, 25);
             this.BtnShowProfileForm.TabIndex = 4;
@@ -94,14 +95,14 @@
             // lbCurrentPage
             // 
             this.lbCurrentPage.AutoSize = true;
-            this.lbCurrentPage.Location = new System.Drawing.Point(285, 363);
+            this.lbCurrentPage.Location = new System.Drawing.Point(285, 382);
             this.lbCurrentPage.Name = "lbCurrentPage";
             this.lbCurrentPage.Size = new System.Drawing.Size(0, 0);
             this.lbCurrentPage.TabIndex = 15;
             // 
             // BtnNext
             // 
-            this.BtnNext.Location = new System.Drawing.Point(328, 361);
+            this.BtnNext.Location = new System.Drawing.Point(308, 380);
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(75, 23);
             this.BtnNext.TabIndex = 13;
@@ -110,7 +111,7 @@
             // 
             // BtnPrevious
             // 
-            this.BtnPrevious.Location = new System.Drawing.Point(177, 361);
+            this.BtnPrevious.Location = new System.Drawing.Point(198, 380);
             this.BtnPrevious.Name = "BtnPrevious";
             this.BtnPrevious.Size = new System.Drawing.Size(75, 23);
             this.BtnPrevious.TabIndex = 14;
@@ -157,7 +158,7 @@
             this.ListboxPostNow.FormattingEnabled = true;
             this.ListboxPostNow.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ListboxPostNow.ItemHeight = 18;
-            this.ListboxPostNow.Location = new System.Drawing.Point(21, 59);
+            this.ListboxPostNow.Location = new System.Drawing.Point(21, 82);
             this.ListboxPostNow.Margin = new System.Windows.Forms.Padding(20);
             this.ListboxPostNow.Name = "ListboxPostNow";
             this.ListboxPostNow.Size = new System.Drawing.Size(555, 292);
@@ -166,7 +167,7 @@
             // 
             // BtnShowMyPostForm
             // 
-            this.BtnShowMyPostForm.Location = new System.Drawing.Point(16, 63);
+            this.BtnShowMyPostForm.Location = new System.Drawing.Point(16, 73);
             this.BtnShowMyPostForm.Name = "BtnShowMyPostForm";
             this.BtnShowMyPostForm.Size = new System.Drawing.Size(98, 25);
             this.BtnShowMyPostForm.TabIndex = 4;
@@ -184,7 +185,7 @@
             this.metroPanel2.HorizontalScrollbarSize = 10;
             this.metroPanel2.Location = new System.Drawing.Point(31, 52);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(129, 100);
+            this.metroPanel2.Size = new System.Drawing.Size(129, 117);
             this.metroPanel2.TabIndex = 14;
             this.metroPanel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroPanel2.VerticalScrollbarBarColor = true;
@@ -201,9 +202,9 @@
             this.pncontrolPanel.HorizontalScrollbarBarColor = true;
             this.pncontrolPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.pncontrolPanel.HorizontalScrollbarSize = 10;
-            this.pncontrolPanel.Location = new System.Drawing.Point(31, 158);
+            this.pncontrolPanel.Location = new System.Drawing.Point(31, 175);
             this.pncontrolPanel.Name = "pncontrolPanel";
-            this.pncontrolPanel.Size = new System.Drawing.Size(129, 172);
+            this.pncontrolPanel.Size = new System.Drawing.Size(129, 141);
             this.pncontrolPanel.TabIndex = 12;
             this.pncontrolPanel.Theme = MetroFramework.MetroThemeStyle.Light;
             this.pncontrolPanel.VerticalScrollbarBarColor = true;
@@ -223,6 +224,7 @@
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.cbbCategory);
             this.metroPanel3.Controls.Add(this.tbSearch);
             this.metroPanel3.Controls.Add(this.lbCurrentPage);
             this.metroPanel3.Controls.Add(this.BtnNext);
@@ -234,7 +236,7 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(177, 36);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(596, 398);
+            this.metroPanel3.Size = new System.Drawing.Size(596, 411);
             this.metroPanel3.TabIndex = 15;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -254,10 +256,22 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
             this.panel3.Controls.Add(this.lbClock);
-            this.panel3.Location = new System.Drawing.Point(4, 442);
+            this.panel3.Location = new System.Drawing.Point(4, 453);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(769, 41);
+            this.panel3.Size = new System.Drawing.Size(769, 30);
             this.panel3.TabIndex = 11;
+            // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.ItemHeight = 19;
+            this.cbbCategory.Location = new System.Drawing.Point(356, 53);
+            this.cbbCategory.MaximumSize = new System.Drawing.Size(220, 0);
+            this.cbbCategory.MinimumSize = new System.Drawing.Size(220, 0);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(220, 25);
+            this.cbbCategory.TabIndex = 17;
             // 
             // MainForm
             // 
@@ -309,5 +323,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private System.Windows.Forms.Label lbClock;
         private System.Windows.Forms.Panel panel3;
+        private MetroFramework.Controls.MetroComboBox cbbCategory;
     }
 }
