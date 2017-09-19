@@ -33,9 +33,17 @@ namespace testEntityFarmwork
             var inPassword = tbLoginPassword.Text;
             if (IsLoggedIn(inEmail, inPassword))
             {
+                var i = (from usro in _ctx.user_role
+                         join ro in _ctx.roles on usro.role_id equals ro.role_id
+                         join us in _ctx.users on usro.user_id equals us.id
+                         where (us.email == inEmail)
+                         select new {
+                             role = ro.role_name
+                         }).FirstOrDefault();
                 var mainForm = new MainForm();
                 this.Hide();
-                LoginInfo.email = inEmail; 
+                LoginInfo.email = inEmail;
+                LoginInfo.role = i.role.ToString();
                 mainForm.Show();
             }
             else
