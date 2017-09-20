@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace testEntityFarmwork
 {
@@ -35,6 +37,33 @@ namespace testEntityFarmwork
             var post = GetPost(_postSelect);
             lbPostTitle.Text = post.post_title;
             rtbPostDetail.Text = post.post_content;
+            byte[] avatar = GetUserOwnPost().img;
+            byte[] images = post.img;
+            if (avatar == null)
+            {
+                imgAvatar.Image = Properties.Resources.SmartOSC;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(avatar);
+                var avatars = Image.FromStream(ms);
+                imgAvatar.Image = avatars;
+                imgAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            if (images == null)
+            {
+                imgPostDetail.Image = Properties.Resources.SmartOSC;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream(images);
+                var image = Image.FromStream(ms);
+                imgPostDetail.Image = image;
+                imgPostDetail.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+            BtnLikePost.Highlight = CheckIsLike(_postSelect, LoginInfo.userId);
+            lbPostIndexStatus.Text = $@"{CountLike()} people Like and have {CountComment()} comment in this post";
             var postDetailForm = new PostDetailForm {Text = post.post_title};
             var comments = GetCommentsByPost(_postSelect);
             var commentOut = (from comment in comments
@@ -101,6 +130,65 @@ namespace testEntityFarmwork
                 BtnComment_Click(sender, e);
             }
             
+        }
+
+        private void BtnLikePost_Click(object sender, EventArgs e)
+        {
+            if (!CheckIsLike(_postSelect, LoginInfo.userId))
+            {   
+                try
+                {
+                    ctx.like_post.Add(new like_post
+                    {
+                        post_id = _postSelect,
+                        user_id = LoginInfo.userId
+                    });
+                    ctx.SaveChanges();
+                    BtnLikePost.Theme = MetroThemeStyle.Light;
+                    BtnLikePost.Highlight = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                try
+                {
+                    var item = ctx.like_post.FirstOrDefault(x => x.post_id == _postSelect && x.user_id == LoginInfo.userId);
+                    ctx.like_post.Remove(item ?? throw new InvalidOperationException());
+                    BtnLikePost.Highlight = false;
+                    ctx.SaveChanges();
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
+            }
+        }
+        private bool CheckIsLike(int postId, int userId)
+        {
+            return (from c in ctx.like_post
+                where c.post_id == postId && c.user_id == userId
+                select c
+            ).Any();
+        }
+
+        private int CountLike()
+        {
+            return ctx.like_post.Count(x => x.post_id == _postSelect && x.user_id == LoginInfo.userId);
+        }
+
+        private int CountComment()
+        {
+            return ctx.comments.Count(x => x.post_id == _postSelect);
+        }
+
+        private user GetUserOwnPost()
+        {
+            return (from p in ctx.posts where p.id == _postSelect select p.user).Single();
         }
     }
 }
