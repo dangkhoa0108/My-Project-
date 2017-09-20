@@ -32,10 +32,12 @@ namespace testEntityFarmwork {
             else {
 
                 loadPost();
+                
             }
-
+            
             picturePost.Image = Properties.Resources.ClickHere;
             loadUser();
+            loadCate();
         }
         //load combobox user
         private void loadUser() {
@@ -45,6 +47,14 @@ namespace testEntityFarmwork {
             cbbUser.ValueMember = "id";
         }
 
+        //load combobox user
+        private void loadCate()
+        {
+            var cate = db.categories.ToList();
+            cbbCategory.DataSource = cate;
+            cbbCategory.DisplayMember = "display_name";
+            cbbCategory.ValueMember = "category_id";
+        }
 
         // loadPost
         private void loadPost() {
@@ -89,6 +99,7 @@ namespace testEntityFarmwork {
                     post_author = LoginInfo.userId,
                     post_content = tbContent.Text,
                     post_title = tbTitle.Text,
+                    category = int.Parse(cbbCategory.SelectedValue.ToString()),
                     status = cbStatus,
                     date_created = DateTime.Now,
                     date_updated = DateTime.Now,

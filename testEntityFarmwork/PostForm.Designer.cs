@@ -46,6 +46,7 @@
             this.btnSavePost = new MetroFramework.Controls.MetroButton();
             this.btnDeletePost = new MetroFramework.Controls.MetroButton();
             this.picturePost = new System.Windows.Forms.PictureBox();
+            this.cbbCategory = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -56,6 +57,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.cbbCategory);
             this.panel2.Controls.Add(this.btnAddPost);
             this.panel2.Controls.Add(this.btnClearPost);
             this.panel2.Controls.Add(this.cbPublish);
@@ -168,12 +170,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click_2);
             // 
@@ -220,6 +222,15 @@
             this.picturePost.TabStop = false;
             this.picturePost.Click += new System.EventHandler(this.picturePost_Click);
             // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.ItemHeight = 23;
+            this.cbbCategory.Location = new System.Drawing.Point(236, 190);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(121, 29);
+            this.cbbCategory.TabIndex = 24;
+            // 
             // PostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +275,7 @@
         private MetroFramework.Controls.MetroButton btnSavePost;
         private MetroFramework.Controls.MetroButton btnDeletePost;
         private System.Windows.Forms.PictureBox picturePost;
+        private MetroFramework.Controls.MetroComboBox cbbCategory;
     }
 }
 
