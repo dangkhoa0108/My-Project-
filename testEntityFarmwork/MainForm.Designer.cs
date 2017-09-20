@@ -173,6 +173,7 @@
             this.BtnShowMyPostForm.TabIndex = 4;
             this.BtnShowMyPostForm.Text = "My Post";
             this.BtnShowMyPostForm.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnShowMyPostForm.Click += new System.EventHandler(this.BtnShowMyPostForm_Click);
             // 
             // metroPanel2
             // 
