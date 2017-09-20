@@ -279,5 +279,13 @@ namespace testEntityFarmwork
             var myPostForm = new MyPostForm();
             myPostForm.Show();
         }
+
+        private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                BtnSearch_Click(sender, e);
+            }
+        }
     }
 }
