@@ -44,6 +44,7 @@
           <Property Name="status" Type="int" />
           <Property Name="date_created" Type="datetime" />
           <Property Name="date_updated" Type="datetime" />
+          <Property Name="img" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="roles">
           <Key>
@@ -425,6 +426,7 @@
           <Property Name="status" Type="Int32" />
           <Property Name="date_created" Type="DateTime" Precision="3" />
           <Property Name="date_updated" Type="DateTime" Precision="3" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="category1" Relationship="AppModel.FK_posts_category1" FromRole="post" ToRole="category" />
           <NavigationProperty Name="comments" Relationship="AppModel.FK_comment_posts" FromRole="post" ToRole="comment" />
           <NavigationProperty Name="like_post" Relationship="AppModel.FK_like_post_posts" FromRole="post" ToRole="like_post" />
@@ -664,6 +666,7 @@
           <EntitySetMapping Name="posts">
             <EntityTypeMapping TypeName="AppModel.post">
               <MappingFragment StoreEntitySet="posts">
+                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="date_updated" ColumnName="date_updated" />
                 <ScalarProperty Name="date_created" ColumnName="date_created" />
                 <ScalarProperty Name="status" ColumnName="status" />

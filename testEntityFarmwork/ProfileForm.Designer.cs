@@ -38,7 +38,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.BtnUpload = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,12 +110,13 @@
             // 
             // avatar
             // 
-            this.avatar.Location = new System.Drawing.Point(127, 63);
+            this.avatar.Location = new System.Drawing.Point(82, 63);
             this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(120, 120);
+            this.avatar.Size = new System.Drawing.Size(165, 157);
             this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatar.TabIndex = 14;
             this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // metroLabel4
             // 
@@ -127,21 +127,11 @@
             this.metroLabel4.TabIndex = 15;
             this.metroLabel4.Text = "Display Name";
             // 
-            // BtnUpload
-            // 
-            this.BtnUpload.Location = new System.Drawing.Point(127, 190);
-            this.BtnUpload.Name = "BtnUpload";
-            this.BtnUpload.Size = new System.Drawing.Size(120, 23);
-            this.BtnUpload.TabIndex = 16;
-            this.BtnUpload.Text = "Upload";
-            this.BtnUpload.Click += new System.EventHandler(this.BtnUpload_Click);
-            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 416);
-            this.Controls.Add(this.BtnUpload);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.avatar);
             this.Controls.Add(this.metroLabel3);
@@ -176,6 +166,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.PictureBox avatar;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroButton BtnUpload;
     }
 }

@@ -45,10 +45,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSavePost = new MetroFramework.Controls.MetroButton();
             this.btnDeletePost = new MetroFramework.Controls.MetroButton();
+            this.picturePost = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePost)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -202,11 +204,27 @@
             this.btnDeletePost.Text = "Delete";
             this.btnDeletePost.Click += new System.EventHandler(this.BtnDeletePost_Click);
             // 
+            // picturePost
+            // 
+            this.picturePost.BackColor = System.Drawing.Color.White;
+            this.picturePost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picturePost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturePost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picturePost.InitialImage = global::testEntityFarmwork.Properties.Resources.ClickHere;
+            this.picturePost.Location = new System.Drawing.Point(771, 27);
+            this.picturePost.Name = "picturePost";
+            this.picturePost.Size = new System.Drawing.Size(120, 119);
+            this.picturePost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePost.TabIndex = 14;
+            this.picturePost.TabStop = false;
+            this.picturePost.Click += new System.EventHandler(this.picturePost_Click);
+            // 
             // PostForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 598);
+            this.ClientSize = new System.Drawing.Size(896, 598);
+            this.Controls.Add(this.picturePost);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvPost);
             this.Controls.Add(this.panel1);
@@ -221,6 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPost)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturePost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,6 +262,7 @@
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton btnSavePost;
         private MetroFramework.Controls.MetroButton btnDeletePost;
+        private System.Windows.Forms.PictureBox picturePost;
     }
 }
 
