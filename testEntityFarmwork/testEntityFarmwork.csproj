@@ -254,6 +254,7 @@
       <LastGenOutput>EntityDBModel.cs</LastGenOutput>
     </Content>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Resources\ClickHere.png" />
     <Content Include="Resources\SmartOSC.png" />
   </ItemGroup>
   <ItemGroup>

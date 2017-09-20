@@ -28,9 +28,7 @@ namespace testEntityFarmwork {
                 txtRole.Text = LoginInfo.role;
                 byte[] images = user.img;
                 if (images == null) {
-                    //avatar.Image = null;
                     avatar.Image = Properties.Resources.SmartOSC;
-                    //avatar.Image = Image.FromFile(@"Resources\SmartOSC.png");
                 }
                 else {
                     MemoryStream ms = new MemoryStream(images);
@@ -111,13 +109,29 @@ namespace testEntityFarmwork {
                     MessageBox.Show("File size: \n" + dialog.FileName + " \n> 100MB !");
                 }
 
-
-
-
             }
 
 
         }
 
+        private void avatar_Click(object sender, EventArgs e) {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if (dialog.ShowDialog() == DialogResult.OK) {
+                var size = new FileInfo(dialog.FileName).Length;
+                var maxBytes = 100 * 1024 * 1024; // Max 100 MB
+                if (size < maxBytes) {
+
+                    imgsrc = dialog.FileName.ToString();
+
+                    avatar.ImageLocation = dialog.FileName;
+                }
+                else {
+
+                    MessageBox.Show("File size: \n" + dialog.FileName + " \n> 100MB !");
+                }
+
+            }
+        }
     }
 }
