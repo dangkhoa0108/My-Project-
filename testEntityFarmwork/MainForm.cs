@@ -280,13 +280,12 @@ namespace testEntityFarmwork
             postForm.Show();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
+        private void tbSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Visible = false;
-            var mainForm = new MainForm();
-            var reportForm = new ReportForm();
-            mainForm.Hide();
-            reportForm.Show();
+            if (e.KeyChar == (char)13)
+            {
+                BtnSearch_Click(sender, e);
+            }
         }
     }
 }
