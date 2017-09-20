@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testEntityFarmwork", "testEntityFarmwork\testEntityFarmwork.csproj", "{608456BB-5E87-4960-8915-D99A5B018ADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "C:\Users\Admin\OneDrive\TestAVATAR\AppTest\WindowsFormsApp1\WindowsFormsApp1.csproj", "{A7DEF088-5F39-4390-B348-7621AAF53451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{608456BB-5E87-4960-8915-D99A5B018ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{608456BB-5E87-4960-8915-D99A5B018ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{608456BB-5E87-4960-8915-D99A5B018ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7DEF088-5F39-4390-B348-7621AAF53451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7DEF088-5F39-4390-B348-7621AAF53451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7DEF088-5F39-4390-B348-7621AAF53451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7DEF088-5F39-4390-B348-7621AAF53451}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
