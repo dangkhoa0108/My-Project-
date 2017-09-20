@@ -287,5 +287,13 @@ namespace testEntityFarmwork
                 BtnSearch_Click(sender, e);
             }
         }
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            var mainForm = new MainForm();
+            var reportForm = new ReportForm();
+            mainForm.Hide();
+            reportForm.Show();
+        }
     }
 }
