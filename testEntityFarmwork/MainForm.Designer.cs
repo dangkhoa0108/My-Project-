@@ -44,9 +44,9 @@
             this.pncontrolPanel = new MetroFramework.Controls.MetroPanel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.cbbCategory = new MetroFramework.Controls.MetroComboBox();
             this.lbClock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbbCategory = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel2.SuspendLayout();
             this.pncontrolPanel.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -242,6 +242,19 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.ItemHeight = 19;
+            this.cbbCategory.Location = new System.Drawing.Point(356, 53);
+            this.cbbCategory.MaximumSize = new System.Drawing.Size(220, 0);
+            this.cbbCategory.MinimumSize = new System.Drawing.Size(220, 0);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(220, 25);
+            this.cbbCategory.TabIndex = 17;
+            this.cbbCategory.SelectedIndexChanged += new System.EventHandler(this.cbbCategory_SelectedIndexChanged);
+            // 
             // lbClock
             // 
             this.lbClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -260,18 +273,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(769, 30);
             this.panel3.TabIndex = 11;
-            // 
-            // cbbCategory
-            // 
-            this.cbbCategory.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.ItemHeight = 19;
-            this.cbbCategory.Location = new System.Drawing.Point(356, 53);
-            this.cbbCategory.MaximumSize = new System.Drawing.Size(220, 0);
-            this.cbbCategory.MinimumSize = new System.Drawing.Size(220, 0);
-            this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(220, 25);
-            this.cbbCategory.TabIndex = 17;
             // 
             // MainForm
             // 

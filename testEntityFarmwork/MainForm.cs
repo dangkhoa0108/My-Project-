@@ -46,7 +46,7 @@ namespace testEntityFarmwork
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(1);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace testEntityFarmwork
                 pncontrolPanel.Hide();
             }
             StartTimer();
-            var listCategory = (from cate in ctx.categories select cate).ToList();
+            var listCategory = GetListCategories();
 
             var headOfCategory = new SomeData
             {
@@ -69,21 +69,11 @@ namespace testEntityFarmwork
                 Value = category.category_id,
                 Text = category.display_name
             }).ToList();
-
             categoryOut.Insert(0, headOfCategory);
-
             cbbCategory.DisplayMember = "Text";
             cbbCategory.DataSource = categoryOut;
-            var listPostPagination = LoadPostPagination();
-            var postOut = listPostPagination.Select(post => new SomeData
-            {
-                Value = post.id,
-                Text = post.post_title
-            })
-                .ToList();
-            ListboxPostNow.DisplayMember = "Text";
-            ListboxPostNow.DataSource = postOut;
             SettingPagination();
+
         }
 
         private static int CountPost()
@@ -119,6 +109,11 @@ namespace testEntityFarmwork
                 }
                 throw;
             }
+        }
+
+        private List<category> GetListCategories()
+        {
+            return (from cate in ctx.categories select cate).ToList();
         }
 
         private void StartTimer()
@@ -205,6 +200,78 @@ namespace testEntityFarmwork
             var roleForm = new RoleForm();
             this.Hide();
             roleForm.Show();
+        }
+
+        private void cbbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            List<SomeData> dataOut;
+            int? value = ((SomeData)cbbCategory.SelectedItem).Value;
+            if (value == 0)
+            {
+                dataOut = getPostOut();
+            }
+            else
+            {
+                dataOut = GetPostOutByCategory((int) value);
+            }
+            ListboxPostNow.DisplayMember = "Text";
+            ListboxPostNow.DataSource = dataOut;
+
+
+        }
+
+        private List<SomeData> getPostOut()
+        {
+            var listPostPagination = LoadPostPagination();
+
+            return listPostPagination.Select(post => new SomeData
+                {
+                    Value = post.id,
+                    Text = post.post_title
+                })
+                .ToList();
+        }
+
+        private List<SomeData> GetPostOutByCategory(int inCategory)
+        {
+            var listPostPagination = GetPostByCatagory(inCategory);
+
+            return listPostPagination.Select(post => new SomeData
+                {
+                    Value = post.id,
+                    Text = post.post_title
+                })
+                .ToList();
+        }
+            
+        private List<post> GetPostByCatagory(int inCategory)
+        {
+            try
+            {
+                var postPaging = ctx.posts
+                    .Where(item => item.status == 1 && item.category == inCategory)
+                    .Distinct()
+                    .OrderByDescending(d => d.date_created)
+                    .Skip(RealPage * NumberPostPerPage)
+                    .Take(NumberPostPerPage)
+                    .ToList();
+                return postPaging;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var eve in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine(@"Entity of type {0} in state {1} has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine(@"- Property: {0}, Error: {1}",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
+            }
         }
     }
 }
