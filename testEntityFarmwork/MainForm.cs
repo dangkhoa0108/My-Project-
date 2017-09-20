@@ -139,7 +139,8 @@ namespace testEntityFarmwork
 
         private void BtnPrevious_Click(object sender, EventArgs e)
         {
-
+            RealPage--;
+            MainForm_Load(sender, e);
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -183,7 +184,8 @@ namespace testEntityFarmwork
 
         private void BtnNext_Click(object sender, EventArgs e)
         {
-
+            RealPage++;
+            MainForm_Load(sender, e);
         }
 
         private void BtnShowProfileForm_Click(object sender, EventArgs e)
