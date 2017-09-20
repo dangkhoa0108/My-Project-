@@ -40,11 +40,11 @@
             this.BtnLikePost = new MetroFramework.Controls.MetroButton();
             this.imgPostDetail = new System.Windows.Forms.PictureBox();
             this.xxx = new MetroFramework.Controls.MetroPanel();
-            this.rtbPostDetail = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbUserPost = new MetroFramework.Controls.MetroLabel();
             this.imgAvatar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbUserPost = new MetroFramework.Controls.MetroLabel();
+            this.rtbPostDetail = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,7 +63,7 @@
             this.lbPostDetailComment.Location = new System.Drawing.Point(3, 3);
             this.lbPostDetailComment.Name = "lbPostDetailComment";
             this.lbPostDetailComment.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbPostDetailComment.Size = new System.Drawing.Size(549, 238);
+            this.lbPostDetailComment.Size = new System.Drawing.Size(552, 238);
             this.lbPostDetailComment.TabIndex = 1;
             // 
             // tbComment
@@ -148,6 +148,7 @@
             // xxx
             // 
             this.xxx.AutoScroll = true;
+            this.xxx.AutoSize = true;
             this.xxx.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.xxx.Controls.Add(this.rtbPostDetail);
             this.xxx.HorizontalScrollbar = true;
@@ -156,20 +157,12 @@
             this.xxx.HorizontalScrollbarSize = 10;
             this.xxx.Location = new System.Drawing.Point(119, 3);
             this.xxx.Name = "xxx";
-            this.xxx.Size = new System.Drawing.Size(433, 202);
+            this.xxx.Size = new System.Drawing.Size(436, 207);
             this.xxx.TabIndex = 8;
             this.xxx.VerticalScrollbar = true;
             this.xxx.VerticalScrollbarBarColor = true;
             this.xxx.VerticalScrollbarHighlightOnWheel = false;
             this.xxx.VerticalScrollbarSize = 10;
-            // 
-            // rtbPostDetail
-            // 
-            this.rtbPostDetail.AutoSize = true;
-            this.rtbPostDetail.Location = new System.Drawing.Point(8, 11);
-            this.rtbPostDetail.Name = "rtbPostDetail";
-            this.rtbPostDetail.Size = new System.Drawing.Size(0, 0);
-            this.rtbPostDetail.TabIndex = 2;
             // 
             // panel2
             // 
@@ -180,6 +173,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(569, 210);
             this.panel2.TabIndex = 9;
+            // 
+            // lbUserPost
+            // 
+            this.lbUserPost.AutoSize = true;
+            this.lbUserPost.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lbUserPost.Location = new System.Drawing.Point(3, 123);
+            this.lbUserPost.MaximumSize = new System.Drawing.Size(117, 117);
+            this.lbUserPost.Name = "lbUserPost";
+            this.lbUserPost.Size = new System.Drawing.Size(0, 0);
+            this.lbUserPost.TabIndex = 10;
+            this.lbUserPost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbUserPost.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // imgAvatar
             // 
@@ -199,17 +204,13 @@
             this.panel3.Size = new System.Drawing.Size(569, 288);
             this.panel3.TabIndex = 10;
             // 
-            // lbUserPost
+            // rtbPostDetail
             // 
-            this.lbUserPost.AutoSize = true;
-            this.lbUserPost.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lbUserPost.Location = new System.Drawing.Point(3, 123);
-            this.lbUserPost.MaximumSize = new System.Drawing.Size(117, 117);
-            this.lbUserPost.Name = "lbUserPost";
-            this.lbUserPost.Size = new System.Drawing.Size(0, 0);
-            this.lbUserPost.TabIndex = 10;
-            this.lbUserPost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbUserPost.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.rtbPostDetail.Location = new System.Drawing.Point(3, 3);
+            this.rtbPostDetail.Multiline = true;
+            this.rtbPostDetail.Name = "rtbPostDetail";
+            this.rtbPostDetail.Size = new System.Drawing.Size(430, 201);
+            this.rtbPostDetail.TabIndex = 2;
             // 
             // PostDetailForm
             // 
@@ -234,7 +235,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgPostDetail)).EndInit();
             this.xxx.ResumeLayout(false);
-            this.xxx.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
@@ -253,12 +253,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox imgPostDetail;
         private MetroFramework.Controls.MetroPanel xxx;
-        private MetroFramework.Controls.MetroLabel rtbPostDetail;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroLabel lbPostIndexStatus;
         private MetroFramework.Controls.MetroButton BtnLikePost;
         private System.Windows.Forms.PictureBox imgAvatar;
         private MetroFramework.Controls.MetroLabel lbUserPost;
+        private MetroFramework.Controls.MetroTextBox rtbPostDetail;
     }
 }
