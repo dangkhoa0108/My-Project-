@@ -13,7 +13,7 @@ namespace testEntityFarmwork {
         AppEntities db = new AppEntities();
         String email = LoginInfo.email.ToString();
         String role = LoginInfo.role.ToString();
-
+        int id = LoginInfo.userId;
         public PostForm() {
 
             InitializeComponent();
@@ -21,14 +21,24 @@ namespace testEntityFarmwork {
 
         private void Main_Load(object sender, EventArgs e) {
             if (role.Equals("USER") || role == "USER") {
+                contextMenuStrip1.Hide();
+                deleteToolStripMenuItem.HideDropDown();
+                btnDeletePost.Hide();
                 cbPublish.Hide();
-                //label4.Hide();
                 cbbUser.Enabled = false;
-
+                cbbUser.Hide();
+                metroLabel3.Hide();
+                int id = LoginInfo.userId;
+                loadPostByUser(id);
             }
+            else {
+
+                loadPost();
+            }
+
             picturePost.Image = Properties.Resources.ClickHere;
             loadUser();
-            loadPost();
+
 
 
 
@@ -45,13 +55,26 @@ namespace testEntityFarmwork {
         // loadPost
         private void loadPost() {
 
+            if (role.Equals("USER") || role == "USER") {
+                loadPostByUser(id);
+            }
+            else {
+                var listPost = from p in db.posts
+                               select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated };
 
-            var listPost = from p in db.posts
-                           select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated };
-
-            dgvPost.DataSource = listPost.ToList();
-
+                dgvPost.DataSource = listPost.ToList();
+            }
         }
+        // load post by user
+        private void loadPostByUser(int idUser) {
+            var listPost = (from p in db.posts
+                            join us in db.users on p.post_author equals us.id
+                            where p.post_author == idUser
+                            select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated }).ToList();
+
+            dgvPost.DataSource = listPost;
+        }
+
 
         //add Post
         private void BtnAddPost_Click(object sender, EventArgs e) {
@@ -60,31 +83,38 @@ namespace testEntityFarmwork {
                 cbStatus = 1;
             else
                 cbStatus = 0;
-
             byte[] images = null;
-            FileStream fs = new FileStream(imgsrc, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            images = br.ReadBytes((int)fs.Length);
-
-
-
-            var newPost = new post {
-                post_author = int.Parse(cbbUser.SelectedValue.ToString()),
-                post_content = tbContent.Text,
-                post_title = tbTitle.Text,
-                status = cbStatus,
-                date_created = DateTime.Now,
-                date_updated = DateTime.Now,
-                img = images
-            };
             try {
+                if (imgsrc.Length > 0) {
+                    FileStream fs = new FileStream(imgsrc, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    images = br.ReadBytes((int)fs.Length);
+                }
+                var newPost = new post {
+                    //post_author = int.Parse(cbbUser.SelectedValue.ToString()),
+                    post_author = LoginInfo.userId,
+                    post_content = tbContent.Text,
+                    post_title = tbTitle.Text,
+                    status = cbStatus,
+                    date_created = DateTime.Now,
+                    date_updated = DateTime.Now,
+                    img = images
+                };
+
 
                 db.posts.Add(newPost);
                 db.SaveChanges();
                 tbTitle.Clear();
                 tbContent.Clear();
                 cbPublish.Checked = false;
-                loadPost();
+                picturePost.Image = Properties.Resources.ClickHere;
+                if (role.Equals("USER") || role == "USER") {
+                    loadPostByUser(id);
+                }
+                else {
+
+                    loadPost();
+                }
 
 
             }
@@ -127,7 +157,7 @@ namespace testEntityFarmwork {
             else cbPublish.Checked = false;
 
 
-           
+
         }
 
         // update PostList
@@ -198,9 +228,9 @@ namespace testEntityFarmwork {
 
 
 
-        private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e) {
-            deletePost();
-        }
+        //private void deleteToolStripMenuItem_Click_1(object sender, EventArgs e) {
+        //    deletePost();
+        //}
 
         private void btnClearPost_Click(object sender, EventArgs e) {
             tbTitle.Clear();
@@ -226,6 +256,10 @@ namespace testEntityFarmwork {
                     MessageBox.Show("File size: \n" + dialog.FileName + " \n> 100MB !");
                 }
             }
+        }
+
+        private void deleteToolStripMenuItem_Click_2(object sender, EventArgs e) {
+            deletePost();
         }
     }
 }

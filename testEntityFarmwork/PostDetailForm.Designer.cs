@@ -31,56 +31,53 @@
             this.components = new System.ComponentModel.Container();
             this.lbPostDetailComment = new System.Windows.Forms.ListBox();
             this.commentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rtbPostDetail = new System.Windows.Forms.RichTextBox();
             this.tbComment = new MetroFramework.Controls.MetroTextBox();
             this.BtnComment = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.lbPostTitle = new MetroFramework.Controls.MetroLabel();
-            this.lbPostTitlea = new MetroFramework.Controls.MetroLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbPostIndexStatus = new MetroFramework.Controls.MetroLabel();
+            this.BtnLikePost = new MetroFramework.Controls.MetroButton();
+            this.imgPostDetail = new System.Windows.Forms.PictureBox();
+            this.xxx = new MetroFramework.Controls.MetroPanel();
+            this.rtbPostDetail = new MetroFramework.Controls.MetroLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.imgAvatar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).BeginInit();
             this.metroPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPostDetail)).BeginInit();
+            this.xxx.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPostDetailComment
             // 
+            this.lbPostDetailComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPostDetailComment.FormattingEnabled = true;
-            this.lbPostDetailComment.Location = new System.Drawing.Point(397, 63);
+            this.lbPostDetailComment.ItemHeight = 18;
+            this.lbPostDetailComment.Location = new System.Drawing.Point(11, 3);
             this.lbPostDetailComment.Name = "lbPostDetailComment";
             this.lbPostDetailComment.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lbPostDetailComment.Size = new System.Drawing.Size(423, 238);
+            this.lbPostDetailComment.Size = new System.Drawing.Size(549, 238);
             this.lbPostDetailComment.TabIndex = 1;
-            // 
-            // rtbPostDetail
-            // 
-            this.rtbPostDetail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rtbPostDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbPostDetail.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rtbPostDetail.Enabled = false;
-            this.rtbPostDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbPostDetail.ForeColor = System.Drawing.Color.Black;
-            this.rtbPostDetail.Location = new System.Drawing.Point(16, 63);
-            this.rtbPostDetail.Margin = new System.Windows.Forms.Padding(10);
-            this.rtbPostDetail.Name = "rtbPostDetail";
-            this.rtbPostDetail.ReadOnly = true;
-            this.rtbPostDetail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.rtbPostDetail.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbPostDetail.Size = new System.Drawing.Size(375, 267);
-            this.rtbPostDetail.TabIndex = 0;
-            this.rtbPostDetail.Text = "";
             // 
             // tbComment
             // 
-            this.tbComment.Location = new System.Drawing.Point(397, 307);
+            this.tbComment.Location = new System.Drawing.Point(11, 262);
             this.tbComment.Name = "tbComment";
-            this.tbComment.Size = new System.Drawing.Size(342, 23);
+            this.tbComment.Size = new System.Drawing.Size(439, 23);
             this.tbComment.TabIndex = 4;
             this.tbComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbComment_KeyPress);
             // 
             // BtnComment
             // 
-            this.BtnComment.Location = new System.Drawing.Point(745, 307);
+            this.BtnComment.Location = new System.Drawing.Point(456, 262);
             this.BtnComment.Name = "BtnComment";
-            this.BtnComment.Size = new System.Drawing.Size(75, 23);
+            this.BtnComment.Size = new System.Drawing.Size(104, 23);
             this.BtnComment.TabIndex = 5;
             this.BtnComment.Text = "Send";
             this.BtnComment.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -89,13 +86,12 @@
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.lbPostTitle);
-            this.metroPanel1.Controls.Add(this.lbPostTitlea);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(16, 25);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(804, 36);
+            this.metroPanel1.Size = new System.Drawing.Size(530, 36);
             this.metroPanel1.TabIndex = 6;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -105,31 +101,111 @@
             // 
             this.lbPostTitle.AutoSize = true;
             this.lbPostTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbPostTitle.Location = new System.Drawing.Point(58, 2);
+            this.lbPostTitle.Location = new System.Drawing.Point(13, 6);
             this.lbPostTitle.Name = "lbPostTitle";
             this.lbPostTitle.Size = new System.Drawing.Size(0, 0);
             this.lbPostTitle.TabIndex = 2;
             // 
-            // lbPostTitlea
+            // panel1
             // 
-            this.lbPostTitlea.AutoSize = true;
-            this.lbPostTitlea.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbPostTitlea.Location = new System.Drawing.Point(8, 2);
-            this.lbPostTitlea.Name = "lbPostTitlea";
-            this.lbPostTitlea.Size = new System.Drawing.Size(57, 25);
-            this.lbPostTitlea.TabIndex = 2;
-            this.lbPostTitlea.Text = "Title : ";
+            this.panel1.Controls.Add(this.lbPostIndexStatus);
+            this.panel1.Controls.Add(this.BtnLikePost);
+            this.panel1.Controls.Add(this.imgPostDetail);
+            this.panel1.Location = new System.Drawing.Point(16, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(530, 504);
+            this.panel1.TabIndex = 8;
+            // 
+            // lbPostIndexStatus
+            // 
+            this.lbPostIndexStatus.AutoSize = true;
+            this.lbPostIndexStatus.Location = new System.Drawing.Point(79, 478);
+            this.lbPostIndexStatus.Name = "lbPostIndexStatus";
+            this.lbPostIndexStatus.Size = new System.Drawing.Size(0, 0);
+            this.lbPostIndexStatus.TabIndex = 2;
+            // 
+            // BtnLikePost
+            // 
+            this.BtnLikePost.Location = new System.Drawing.Point(7, 475);
+            this.BtnLikePost.Name = "BtnLikePost";
+            this.BtnLikePost.Size = new System.Drawing.Size(60, 23);
+            this.BtnLikePost.Style = MetroFramework.MetroColorStyle.Blue;
+            this.BtnLikePost.TabIndex = 1;
+            this.BtnLikePost.Text = "Like";
+            this.BtnLikePost.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnLikePost.Click += new System.EventHandler(this.BtnLikePost_Click);
+            // 
+            // imgPostDetail
+            // 
+            this.imgPostDetail.Location = new System.Drawing.Point(0, 3);
+            this.imgPostDetail.Name = "imgPostDetail";
+            this.imgPostDetail.Size = new System.Drawing.Size(527, 464);
+            this.imgPostDetail.TabIndex = 0;
+            this.imgPostDetail.TabStop = false;
+            this.imgPostDetail.WaitOnLoad = true;
+            // 
+            // xxx
+            // 
+            this.xxx.AutoScroll = true;
+            this.xxx.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.xxx.Controls.Add(this.rtbPostDetail);
+            this.xxx.HorizontalScrollbar = true;
+            this.xxx.HorizontalScrollbarBarColor = true;
+            this.xxx.HorizontalScrollbarHighlightOnWheel = false;
+            this.xxx.HorizontalScrollbarSize = 10;
+            this.xxx.Location = new System.Drawing.Point(119, 3);
+            this.xxx.Name = "xxx";
+            this.xxx.Size = new System.Drawing.Size(441, 202);
+            this.xxx.TabIndex = 8;
+            this.xxx.VerticalScrollbar = true;
+            this.xxx.VerticalScrollbarBarColor = true;
+            this.xxx.VerticalScrollbarHighlightOnWheel = false;
+            this.xxx.VerticalScrollbarSize = 10;
+            // 
+            // rtbPostDetail
+            // 
+            this.rtbPostDetail.AutoSize = true;
+            this.rtbPostDetail.Location = new System.Drawing.Point(8, 11);
+            this.rtbPostDetail.Name = "rtbPostDetail";
+            this.rtbPostDetail.Size = new System.Drawing.Size(0, 0);
+            this.rtbPostDetail.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.imgAvatar);
+            this.panel2.Controls.Add(this.xxx);
+            this.panel2.Location = new System.Drawing.Point(552, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(569, 210);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lbPostDetailComment);
+            this.panel3.Controls.Add(this.tbComment);
+            this.panel3.Controls.Add(this.BtnComment);
+            this.panel3.Location = new System.Drawing.Point(552, 283);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(569, 288);
+            this.panel3.TabIndex = 10;
+            // 
+            // imgAvatar
+            // 
+            this.imgAvatar.Location = new System.Drawing.Point(3, 3);
+            this.imgAvatar.Name = "imgAvatar";
+            this.imgAvatar.Size = new System.Drawing.Size(110, 117);
+            this.imgAvatar.TabIndex = 9;
+            this.imgAvatar.TabStop = false;
             // 
             // PostDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 351);
+            this.ClientSize = new System.Drawing.Size(1144, 575);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.BtnComment);
-            this.Controls.Add(this.tbComment);
-            this.Controls.Add(this.lbPostDetailComment);
-            this.Controls.Add(this.rtbPostDetail);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PostDetailForm";
@@ -140,6 +216,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.commentDataSetBindingSource)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPostDetail)).EndInit();
+            this.xxx.ResumeLayout(false);
+            this.xxx.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,11 +231,18 @@
         #endregion
         private System.Windows.Forms.ListBox lbPostDetailComment;
         private System.Windows.Forms.BindingSource commentDataSetBindingSource;
-        private System.Windows.Forms.RichTextBox rtbPostDetail;
         private MetroFramework.Controls.MetroTextBox tbComment;
         private MetroFramework.Controls.MetroButton BtnComment;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel lbPostTitle;
-        private MetroFramework.Controls.MetroLabel lbPostTitlea;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox imgPostDetail;
+        private MetroFramework.Controls.MetroPanel xxx;
+        private MetroFramework.Controls.MetroLabel rtbPostDetail;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private MetroFramework.Controls.MetroLabel lbPostIndexStatus;
+        private MetroFramework.Controls.MetroButton BtnLikePost;
+        private System.Windows.Forms.PictureBox imgAvatar;
     }
 }
