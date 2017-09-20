@@ -36,13 +36,17 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.BtnUpload = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(122, 205);
+            this.btnUpdate.Location = new System.Drawing.Point(127, 368);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(159, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(120, 28);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -50,7 +54,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(8, 205);
+            this.btnBack.Location = new System.Drawing.Point(13, 368);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(54, 28);
             this.btnBack.TabIndex = 7;
@@ -59,38 +63,38 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(122, 71);
+            this.txtName.Location = new System.Drawing.Point(127, 234);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(159, 27);
+            this.txtName.Size = new System.Drawing.Size(120, 27);
             this.txtName.TabIndex = 8;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(122, 109);
+            this.txtMail.Location = new System.Drawing.Point(127, 272);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(159, 27);
+            this.txtMail.Size = new System.Drawing.Size(120, 27);
             this.txtMail.TabIndex = 9;
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(122, 150);
+            this.txtRole.Location = new System.Drawing.Point(127, 313);
             this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(159, 27);
+            this.txtRole.Size = new System.Drawing.Size(120, 27);
             this.txtRole.TabIndex = 10;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 71);
+            this.metroLabel1.Location = new System.Drawing.Point(13, 63);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(47, 19);
             this.metroLabel1.TabIndex = 11;
-            this.metroLabel1.Text = "Name";
+            this.metroLabel1.Text = "Avatar";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 117);
+            this.metroLabel2.Location = new System.Drawing.Point(13, 280);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(34, 19);
             this.metroLabel2.TabIndex = 12;
@@ -99,17 +103,45 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 158);
+            this.metroLabel3.Location = new System.Drawing.Point(13, 321);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(35, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Role";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(127, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(13, 234);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel4.TabIndex = 15;
+            this.metroLabel4.Text = "Display Name";
+            // 
+            // BtnUpload
+            // 
+            this.BtnUpload.Location = new System.Drawing.Point(127, 190);
+            this.BtnUpload.Name = "BtnUpload";
+            this.BtnUpload.Size = new System.Drawing.Size(120, 23);
+            this.BtnUpload.TabIndex = 16;
+            this.BtnUpload.Text = "Upload";
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 256);
+            this.ClientSize = new System.Drawing.Size(270, 416);
+            this.Controls.Add(this.BtnUpload);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -125,6 +157,7 @@
             this.Text = "Profile";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfileForm_FormClosing);
             this.Load += new System.EventHandler(this.ProfileForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +172,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroButton BtnUpload;
     }
 }
