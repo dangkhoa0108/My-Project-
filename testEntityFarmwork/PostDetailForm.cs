@@ -37,11 +37,12 @@ namespace testEntityFarmwork
             var post = GetPost(_postSelect);
             lbPostTitle.Text = post.post_title;
             rtbPostDetail.Text = post.post_content;
+            lbUserPost.Text = GetUserOwnPost().username;
             byte[] avatar = GetUserOwnPost().img;
             byte[] images = post.img;
             if (avatar == null)
             {
-                imgAvatar.Image = Properties.Resources.SmartOSC;
+                imgAvatar.Image = Properties.Resources.ClickHere;
             }
             else
             {
