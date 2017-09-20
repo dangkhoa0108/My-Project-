@@ -37,7 +37,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="post_title" Type="varchar" MaxLength="50" />
+          <Property Name="post_title" Type="varchar(max)" />
           <Property Name="post_content" Type="text" />
           <Property Name="post_author" Type="int" />
           <Property Name="category" Type="int" />
@@ -419,7 +419,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="post_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="post_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="post_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="post_author" Type="Int32" />
           <Property Name="category" Type="Int32" />

@@ -114,6 +114,12 @@
     <Compile Include="PostDetailForm.Designer.cs">
       <DependentUpon>PostDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyPostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPostForm.Designer.cs">
+      <DependentUpon>MyPostForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PostDetailForm.resx">
       <DependentUpon>PostDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPostForm.resx">
+      <DependentUpon>MyPostForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PostForm.resx">
       <DependentUpon>PostForm.cs</DependentUpon>

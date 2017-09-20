@@ -8,32 +8,26 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace testEntityFarmwork {
-    public partial class PostForm : MetroFramework.Forms.MetroForm {
+    public partial class MyPostForm : MetroFramework.Forms.MetroForm {
 
         AppEntities db = new AppEntities();
         String email = LoginInfo.email.ToString();
         String role = LoginInfo.role.ToString();
         int id = LoginInfo.userId;
-        public PostForm() {
+        public MyPostForm() {
 
             InitializeComponent();
         }
 
         private void Main_Load(object sender, EventArgs e) {
-            if (role.Equals("USER") || role == "USER") {
-                deleteToolStripMenuItem.Enabled = false;
-                cbPublish.Hide();
-                cbbUser.Enabled = false;
-                cbbUser.Hide();
-                metroLabel3.Hide();
-                int id = LoginInfo.userId;
-                loadPostByUser(id);
-            }
-            else {
 
-                loadPost();
-            }
-
+           
+            cbPublish.Hide();
+            cbbUser.Enabled = false;
+            cbbUser.Hide();
+            metroLabel3.Hide();
+           int id = LoginInfo.userId;
+            loadPostByUser();
             picturePost.Image = Properties.Resources.ClickHere;
             loadUser();
         }
@@ -47,23 +41,24 @@ namespace testEntityFarmwork {
 
 
         // loadPost
-        private void loadPost() {
+        //private void loadPost() {
 
-            if (role.Equals("USER") || role == "USER") {
-                loadPostByUser(id);
-            }
-            else {
-                var listPost = from p in db.posts
-                               select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated };
+        //    if (role.Equals("USER") || role == "USER") {
+        //        loadPostByUser(id);
+        //    }
+        //    else {
+        //        var listPost = from p in db.posts
+        //                       select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated };
 
-                dgvPost.DataSource = listPost.ToList();
-            }
-        }
+        //        dgvPost.DataSource = listPost.ToList();
+        //    }
+        //}
         // load post by user
-        private void loadPostByUser(int idUser) {
+        private void loadPostByUser() {
+            int id = LoginInfo.userId;
             var listPost = (from p in db.posts
                             join us in db.users on p.post_author equals us.id
-                            where p.post_author == idUser
+                            where p.post_author == id
                             select new { p.id, p.post_title, p.post_content, post_author = p.user.username, p.status, p.date_created, p.date_updated }).ToList();
 
             dgvPost.DataSource = listPost;
@@ -102,13 +97,8 @@ namespace testEntityFarmwork {
                 tbContent.Clear();
                 cbPublish.Checked = false;
                 picturePost.Image = Properties.Resources.ClickHere;
-                if (role.Equals("USER") || role == "USER") {
-                    loadPostByUser(id);
-                }
-                else {
-
-                    loadPost();
-                }
+                loadPostByUser();
+               
 
 
             }
@@ -185,7 +175,7 @@ namespace testEntityFarmwork {
                     db.posts.Remove(post);
                     db.SaveChanges();
                     MessageBox.Show("Delete Sucessed");
-                    loadPost();
+                    loadPostByUser();
 
                 }
 
@@ -212,7 +202,8 @@ namespace testEntityFarmwork {
                 post.status = cbStatus;
                 db.SaveChanges();
                 MessageBox.Show("Update Sucessed");
-                loadPost();
+                
+                loadPostByUser();
             }
             catch {
                 MessageBox.Show("Update Failed");
