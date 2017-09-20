@@ -27,6 +27,7 @@ namespace testEntityFarmwork
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
+        public byte[] img { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comment> comments { get; set; }

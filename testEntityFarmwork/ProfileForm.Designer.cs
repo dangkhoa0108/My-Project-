@@ -36,10 +36,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.BtnUpload = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -109,13 +109,14 @@
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Role";
             // 
-            // pictureBox1
+            // avatar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(127, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.avatar.Location = new System.Drawing.Point(127, 63);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(120, 120);
+            this.avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatar.TabIndex = 14;
+            this.avatar.TabStop = false;
             // 
             // metroLabel4
             // 
@@ -133,6 +134,7 @@
             this.BtnUpload.Size = new System.Drawing.Size(120, 23);
             this.BtnUpload.TabIndex = 16;
             this.BtnUpload.Text = "Upload";
+            this.BtnUpload.Click += new System.EventHandler(this.BtnUpload_Click);
             // 
             // ProfileForm
             // 
@@ -141,7 +143,7 @@
             this.ClientSize = new System.Drawing.Size(270, 416);
             this.Controls.Add(this.BtnUpload);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.avatar);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -157,7 +159,7 @@
             this.Text = "Profile";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfileForm_FormClosing);
             this.Load += new System.EventHandler(this.ProfileForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +174,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox avatar;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton BtnUpload;
     }

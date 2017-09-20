@@ -78,6 +78,7 @@
           <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="img" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_comment_posts">
           <End Role="posts" Type="Self.posts" Multiplicity="0..1">
@@ -465,6 +466,7 @@
           <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="comments" Relationship="AppModel.FK_comment_users" FromRole="user" ToRole="comment" />
           <NavigationProperty Name="like_post" Relationship="AppModel.FK_like_post_users" FromRole="user" ToRole="like_post" />
           <NavigationProperty Name="posts" Relationship="AppModel.FK_posts_users" FromRole="user" ToRole="post" />
@@ -704,6 +706,7 @@
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="AppModel.user">
               <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="username" ColumnName="username" />
