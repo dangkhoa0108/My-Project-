@@ -47,6 +47,7 @@
             this.cbbCategory = new MetroFramework.Controls.MetroComboBox();
             this.lbClock = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnReport = new MetroFramework.Controls.MetroButton();
             this.metroPanel2.SuspendLayout();
             this.pncontrolPanel.SuspendLayout();
             this.metroPanel3.SuspendLayout();
@@ -195,6 +196,7 @@
             // pncontrolPanel
             // 
             this.pncontrolPanel.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
+            this.pncontrolPanel.Controls.Add(this.btnReport);
             this.pncontrolPanel.Controls.Add(this.btnShowRoleForm);
             this.pncontrolPanel.Controls.Add(this.btnShowPostForm);
             this.pncontrolPanel.Controls.Add(this.btnShowUserForm);
@@ -204,7 +206,7 @@
             this.pncontrolPanel.HorizontalScrollbarSize = 10;
             this.pncontrolPanel.Location = new System.Drawing.Point(31, 175);
             this.pncontrolPanel.Name = "pncontrolPanel";
-            this.pncontrolPanel.Size = new System.Drawing.Size(129, 141);
+            this.pncontrolPanel.Size = new System.Drawing.Size(129, 168);
             this.pncontrolPanel.TabIndex = 12;
             this.pncontrolPanel.Theme = MetroFramework.MetroThemeStyle.Light;
             this.pncontrolPanel.VerticalScrollbarBarColor = true;
@@ -274,6 +276,16 @@
             this.panel3.Size = new System.Drawing.Size(769, 30);
             this.panel3.TabIndex = 11;
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(27, 131);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 4;
+            this.btnReport.Text = "Report";
+            this.btnReport.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,5 +337,6 @@
         private System.Windows.Forms.Label lbClock;
         private System.Windows.Forms.Panel panel3;
         private MetroFramework.Controls.MetroComboBox cbbCategory;
+        private MetroFramework.Controls.MetroButton btnReport;
     }
 }
