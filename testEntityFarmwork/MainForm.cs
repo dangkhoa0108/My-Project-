@@ -275,9 +275,9 @@ namespace testEntityFarmwork
         }
 
         private void BtnShowMyPostForm_Click(object sender, EventArgs e) {
-            var postForm = new PostForm();
             this.Hide();
-            postForm.Show();
+            var myPostForm = new MyPostForm();
+            myPostForm.Show();
         }
     }
 }
