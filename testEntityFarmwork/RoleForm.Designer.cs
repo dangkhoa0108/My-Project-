@@ -95,6 +95,7 @@
             // 
             // tbRoleName
             // 
+            this.tbRoleName.Enabled = false;
             this.tbRoleName.Location = new System.Drawing.Point(96, 193);
             this.tbRoleName.Name = "tbRoleName";
             this.tbRoleName.Size = new System.Drawing.Size(213, 28);

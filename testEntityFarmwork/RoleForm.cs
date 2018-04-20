@@ -114,7 +114,7 @@ namespace testEntityFarmwork
         {
             var mainForm = new MainForm();
             var roleForm = new RoleForm();
-            roleForm.Close();
+            roleForm.Hide();
             mainForm.Show();
         }
 
